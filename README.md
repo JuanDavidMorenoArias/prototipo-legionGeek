@@ -1,3 +1,13 @@
+## Para el equipo de desarrollo
+
+# Ejecute los siguientes comandos en el terminal una vez clonado el repositorio:
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
+
 # prototipo-legionGeek
 Este repositorio contendra la realización del prototipo de tareas automatizables para la empresa LegionGeek.
 
