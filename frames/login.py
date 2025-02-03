@@ -23,7 +23,7 @@ class LogInFrame(tk.Frame):
         # El entry (espacio para insertar el numero de documento)
         self.userID = tk.Entry(self, width=30, foreground='gray', border=0,background='white', insertbackground='#1297cc', font=('Trebuchet MS', 12, 'bold'))
         self.userID.place(relx=0.1, rely=0.3)
-        self.userID.insert(0, 'Numero de documento')
+        self.userID.insert(0, 'Numero de Documento')
         # Línea bajo el entry del numero de documento
         self.write_line_userID = tk.Frame(self,width=300,height=2,background='black').place(relx=0.1,rely=0.37)
 

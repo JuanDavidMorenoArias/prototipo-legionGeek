@@ -25,7 +25,7 @@ class RegisterFrame(tk.Frame):
         # El entry (espacio para insertar el numero de documento)
         self.userID = tk.Entry(self, width=30, foreground='gray', background='white', insertbackground='#5b4275', border=0, font=('Trebuchet MS', 12, 'bold'))
         self.userID.place(relx=0.1, rely=0.20)
-        self.userID.insert(0, 'Numero de documento')
+        self.userID.insert(0, 'Numero de Documento')
         self.write_line_userID = tk.Frame(self, width=300, height=2, background='black').place(relx=0.1, rely=0.25)
 
         # El entry (espacio para insertar el nombre)

@@ -40,7 +40,7 @@ def load_existing_users():
 def userID_on_enter(entry):
     userID = entry.get()
     entry.delete(0, 'end')
-    if userID == 'Numero de documento':
+    if userID == 'Numero de Documento':
         entry.config(foreground='black')
     else:
         entry.insert(0, userID.strip())
@@ -49,7 +49,7 @@ def userID_on_leave(entry):
     userID = entry.get()
     if userID == '':
         entry.config(foreground='gray')
-        entry.insert(0, 'Numero de documento')
+        entry.insert(0, 'Numero de Documento')
 
 #NOMBRE
 def name_on_enter(entry):
