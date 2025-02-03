@@ -5,7 +5,7 @@ from tkinter import ttk
 from frames.login import LogInFrame
 from frames.intro import IntroFrame
 from frames.toggle_menu import ToggleMenuFrame
-from frames.home_page import HomeFrame  # Asegúrate de importar HomeFrame
+from frames.inicio_frame import HomeFrame  # Asegúrate de importar HomeFrame
 
 import utils
 

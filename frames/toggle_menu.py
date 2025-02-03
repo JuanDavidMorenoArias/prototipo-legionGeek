@@ -1,10 +1,10 @@
 import sys
 import tkinter as tk
 from tkinter import ttk
-from frames.home_page import HomeFrame
-from frames.mileage_page import MileageFrame
-from frames.stations_page import StationsFrame
-from frames.vehicles_page import VehiclesFrame
+from frames.inicio_frame import HomeFrame
+from frames.proponer_frame import ProponerFrame
+from frames.buzon_frame import BuzonFrame
+from frames.actividades_frame import ActividadesFrame
 
 class ToggleMenuFrame(tk.Frame):
     # En esta clase
@@ -52,9 +52,9 @@ class SideBarFrame(tk.Frame):
          self.current_frame = home_frame
          self.create_widgets()
          self.home_frame = home_frame
-         self.mileage_frame = MileageFrame(self.parent)
-         self.stations_frame = StationsFrame(self.parent)
-         self.vehicles_frame = VehiclesFrame(self.parent)
+         self.mileage_frame = ProponerFrame(self.parent)
+         self.stations_frame = BuzonFrame(self.parent)
+         self.vehicles_frame = ActividadesFrame(self.parent)
 
     def create_widgets(self): # Todos los botones pue 
 
