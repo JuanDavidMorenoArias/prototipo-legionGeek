@@ -1,24 +1,27 @@
+import json
+import os
+
 class User:
-  def __init__(self,name=None,id=0,phone=0,email=None,password=None):
-    self.name=name
-    self.id=id
+  def __init__(self,full_name,userID=0,phone=0,email=None,password=None):
+    self.full_name=full_name
+    self.userID=userID
     self.phone=phone
     self.email=email
     self.password=password
 
-  def set_nombre(self,name):
-    self.name=name
-  def get_nombre(self):
-    return self.name
+  def set_full_name(self,full_name):
+    self.full_name=full_name
+  def get_full_name(self):
+    return self.full_name
   
-  def set_id(self,id):
-    self.id=id
-  def get_id(self):
-    return self.id
+  def set_userID(self,userID):
+    self.userID=userID
+  def get_userID(self):
+    return self.userID
   
-  def set_tel(self,phone):
+  def set_phone(self,phone):
     self.phone=phone
-  def get_tel(self):
+  def get_phone(self):
     return self.phone
   
   def set_email(self,email):
