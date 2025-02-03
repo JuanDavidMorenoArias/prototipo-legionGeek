@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import re
 import utils
+from user import User
 
 class RegisterFrame(tk.Frame):
     # En esta clase
@@ -105,12 +106,15 @@ class RegisterFrame(tk.Frame):
         existing_users = utils.load_existing_users()
         
         # Recolecta los datos para comparar
-        username = self.userID.get().strip()
+        full_name = self.full_name.get().strip()
+        user_id = self.userID.get().strip()
         password = self.password.get().strip()
         confirm = self.confirm_password.get().strip()
+        phone = self.phone.get().strip()
+        email = self.email.get().split()
 
         # Verificar que ningun campo quede vacio
-        if not (username and password and confirm):
+        if not (full_name and user_id and password and confirm and phone and email):
             messagebox.showerror('Error', 'Please fill in all fields')
             return
         
@@ -120,15 +124,15 @@ class RegisterFrame(tk.Frame):
             return
         
         #Verificar que el nombre de usuario no este ya en uso
-        if username in existing_users:
-            messagebox.showerror('Error', 'Username already in use')
+        if any(user.userID == user_id for user in existing_users):
+            messagebox.showerror('Error', 'User ID already in use')
             return
         
         # Verificar el patrón del Usuario y contraseña usando una expresión regular
-        username_requirement = re.match(r"^\S+$", username)
+        user_id_requirement = re.match(r"^\d{7,}$", user_id)
         password_requirement = re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\w\d!@#$%^&*()-_+=]{8,}$", password)
 
-        if not (username_requirement and password_requirement):
+        if not (user_id_requirement and password_requirement):
             messagebox.showerror('Error',
                                  '- Username must contain no whitespaces\n'
                                  '- Password must be at least 8 characters longand contain at\n'
@@ -138,10 +142,9 @@ class RegisterFrame(tk.Frame):
         
         # Si el registro cumplio con todo, guarda al usuario y contraseña
         # Actualiza la lista de usuarios existentes
-        existing_users[username] = password
-
-        with open('users.txt', 'a') as file:
-            file.write(f"{username},{password}\n")
+        new_user = User(full_name, user_id, password, phone, email)
+        existing_users.append(new_user)
+        utils.save_users(existing_users)
 
         # Mostra el mensaje de exito
         messagebox.showinfo('Success', 'Account created succesfully')

@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import utils
 import frames.register as register
+from user import User
 
 class LogInFrame(tk.Frame):
     def __init__(self, parent, login_callback):
@@ -69,26 +70,28 @@ class LogInFrame(tk.Frame):
     def sign_in(self):
         # Lista de usuarios creados hasta el momento
         existing_users = utils.load_existing_users()
-        username = self.userID.get().strip()
+        user_id = self.userID.get().strip()
         password = self.password.get().strip()
         
         # Comprobar si el usuario existe
-        if username not in existing_users: 
-            messagebox.showerror('Error','¡El usuario no existe!')
+        user = next((user for user in existing_users if user.userID == user_id), None)
+        if not user:
+            messagebox.showerror('Error', '¡El usuario no existe!')
+            return
     
         # Comprobar si la contraseña es correcta
-        else: 
-            if existing_users[username] != password:
-                messagebox.showerror('Error', '¡Contraseña incorrecta!')
-            
-            else:
-                # Limpiar los campos de entrada
-                self.userID.delete(0, 'end')
-                self.password.delete(0, 'end')
-                # Mostrar mensaje de inicio de sesión exitoso
-                messagebox.showinfo('Bienvenido','Ha iniciado sesión exitosamente!')
-                # Llamar al callback de inicio de sesión
-                self.login_callback(True)
+
+        if user.password != password:
+            messagebox.showerror('Error', '¡Contraseña incorrecta!')
+            return 
+        
+         # Limpiar los campos de entrada
+        self.userID.delete(0, 'end')
+        self.password.delete(0, 'end')
+        # Mostrar mensaje de inicio de sesión exitoso
+        messagebox.showinfo('Bienvenido','Ha iniciado sesión exitosamente!')
+        # Llamar al callback de inicio de sesión
+        self.login_callback(True)
 
     # Mostrar nuevamente el frame de inicio de sesión
     def reshow(self):

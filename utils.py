@@ -1,5 +1,25 @@
 import os
+import json
+from user import User
 
+# Carga los usuarios existentes desde el archivo json con los usuarios
+def load_existing_users(filename='users.json'): # recibe el nombre del archivo
+    if os.path.exists(filename):
+        with open(filename, 'r') as file:
+            try:
+                data = json.load(file)
+                if not data: # Verificar si el archivo esta vacío
+                    return []
+                return [User.from_dict(user) for user in data]
+            except json.JSONDecodeError: #Manejar el caso de un archivo vacio o malformado
+                return []
+    return [] # si existe el archivo, retorna
+
+# guardar los usuarios en el JSON
+def save_users(users, filename='users.json'):
+    with open(filename, 'w') as file:
+        json.dump([user.to_dict() for user in users], file)
+        
 # El estilo de la ventana
 def legionGeek_window_style(window):
     window.geometry('1000x600') # tamaño de ventana
@@ -7,24 +27,6 @@ def legionGeek_window_style(window):
     window.title('LegionGeek Actividades') # titulo de la ventana
     window.config(background='white') 
     # Imagen en la barra de titulo  
-
-def load_existing_users():
-    try:  # Leer los nombres de usuario existentes desde el archivo users.txt
-        with open('users.txt', 'r') as file:
-            existing_users = {}
-            lines = file.readlines()
-            if not lines:  # Verificar si el archivo está vacío
-                print("El archivo usuarios se encuentra vacío.")
-                return existing_users
-            
-            for line in lines:
-                username, password = line.strip().split(',')
-                existing_users[username] = password
-            
-            return existing_users
-        
-    except FileNotFoundError:  # Si no existe el archivo, más adelante lo creará
-        return {}
 
 #####################################################################################################################################
 
