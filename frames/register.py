@@ -6,7 +6,7 @@ import utils
 class RegisterFrame(tk.Frame):
     # En esta clase
     def __init__(self, parent, login_frame):
-        super().__init__(parent, width=350, height=450, background='white')
+        super().__init__(parent, width=350, height=550, background='white')
         # Yo el propio frame
         self.me = self
         # Parent: la ventana padre
@@ -18,34 +18,58 @@ class RegisterFrame(tk.Frame):
               
     # Creacion de los widgets del frame, botones, entries y labels de texto
     def create_widgets(self):
-        # Texto "Sign Up"
-        self.heading = ttk.Label(self, text='Sign Up', foreground='orange', background='white', font=('Trebuchet MS', 23, 'bold'))
-        self.heading.place(relx=0.5, rely=0.14, anchor='center')
-        # El entry (espacio para insertar el Username)
-        self.user = tk.Entry(self, width=30, foreground='gray', background='white', border=0, font=('Trebuchet MS', 12, 'bold'))
-        self.user.place(relx=0.1, rely=0.3)
-        self.user.insert(0, 'Username')
-        self.write_line_user = tk.Frame(self, width=300, height=2, background='black').place(relx=0.1, rely=0.35)
-        # El entry (espacio para insertar el Password)
-        self.code = tk.Entry(self, width=30, foreground='gray', background='white', border=0, font=('Trebuchet MS', 12, 'bold'))
-        self.code.place(relx=0.1, rely=0.45)
-        self.code.insert(0, 'Password')
-        self.write_line_code = tk.Frame(self, width=300, height=2, background='black').place(relx=0.1, rely=0.50)
-        # El entry (espacio para confirmar la Password antes escrita)
-        self.confirm_code = tk.Entry(self, width=30, foreground='gray', background='white', border=0, font=('Trebuchet MS', 12, 'bold'))
-        self.confirm_code.place(relx=0.1, rely=0.6)
-        self.confirm_code.insert(0, 'Confirm Password')
-        self.write_line_confirm = tk.Frame(self, width=300, height=2, background='black').place(relx=0.1, rely=0.65)
-        # Boton para confirmar que nos registramos con ese Username y Password
-        self.sign_up_button = tk.Button(self, cursor='hand2', width=42, pady=7, border=0, text='Create account', background='orange', foreground='white')
-        self.sign_up_button.place(relx=0.1, rely=0.76)
+        # Texto "Registrarse"
+        self.heading = ttk.Label(self, text='Registrarse', foreground='#5b4275', background='white', font=('Trebuchet MS', 23, 'bold'))
+        self.heading.place(relx=0.5, rely=0.10, anchor='center')
+
+        # El entry (espacio para insertar el numero de documento)
+        self.userID = tk.Entry(self, width=30, foreground='gray', background='white', insertbackground='#5b4275', border=0, font=('Trebuchet MS', 12, 'bold'))
+        self.userID.place(relx=0.1, rely=0.20)
+        self.userID.insert(0, 'Numero de documento')
+        self.write_line_userID = tk.Frame(self, width=300, height=2, background='black').place(relx=0.1, rely=0.25)
+
+        # El entry (espacio para insertar el nombre)
+        self.full_name = tk.Entry(self, width=30, foreground='gray', background='white', insertbackground='#5b4275',  border=0, font=('Trebuchet MS', 12, 'bold'))
+        self.full_name.place(relx=0.1, rely=0.30)
+        self.full_name.insert(0, 'Nombre Completo')
+        self.write_line_full_name = tk.Frame(self, width=300, height=2, background='black').place(relx=0.1, rely=0.35)
+
+        # El entry (espacio para insertar el email)
+        self.email = tk.Entry(self, width=30, foreground='gray', background='white', insertbackground='#5b4275', border=0, font=('Trebuchet MS', 12, 'bold'))
+        self.email.place(relx=0.1, rely=0.40)
+        self.email.insert(0, 'Correo Electrónico')
+        self.write_line_email = tk.Frame(self, width=300, height=2, background='black').place(relx=0.1, rely=0.45)
+
+        # El entry (espacio para insertar el numero telefonico)
+        self.phone = tk.Entry(self, width=30, foreground='gray', background='white', insertbackground='#5b4275', border=0, font=('Trebuchet MS', 12, 'bold'))
+        self.phone.place(relx=0.1, rely=0.50)
+        self.phone.insert(0, 'Numero Telefónico')
+        self.write_line_phone = tk.Frame(self, width=300, height=2, background='black').place(relx=0.1, rely=0.55)
+
+        # El entry (espacio para insertar el contraseña)
+        self.password = tk.Entry(self, width=30, foreground='gray', background='white', insertbackground='#5b4275', border=0, font=('Trebuchet MS', 12, 'bold'))
+        self.password.place(relx=0.1, rely=0.60)
+        self.password.insert(0, 'Contraseña')
+        self.write_line_password = tk.Frame(self, width=300, height=2, background='black').place(relx=0.1, rely=0.65)
+
+        # El entry (espacio para confirmar la contraseña antes escrita)
+        self.confirm_password = tk.Entry(self, width=30, foreground='gray', background='white', insertbackground='#5b4275', border=0, font=('Trebuchet MS', 12, 'bold'))
+        self.confirm_password.place(relx=0.1, rely=0.70)
+        self.confirm_password.insert(0, 'Confirmar Contraseña')
+        self.write_line_confirm = tk.Frame(self, width=300, height=2, background='black').place(relx=0.1, rely=0.75)
+
+        # Boton para confirmar que nos registramos con ese Numero de documento y contraseña
+        self.sign_up_button = tk.Button(self, cursor='hand2', width=42, pady=7, border=0, text='Completar registro', background='#5b4275', foreground='white')
+        self.sign_up_button.place(relx=0.1, rely=0.79)
         self.sign_up_button.config(command=self.signup)
+
         # Texto que guia al usuario al Inicio de sesion si ya tiene una cuenta creada
-        self.login_getaway = ttk.Label(self, text=r"I have an account", background='white', foreground='black', font=('Trebuchet MS', 9, 'bold'))
-        self.login_getaway.place(relx=0.25, rely=0.91)
+        self.login_getaway = ttk.Label(self, text=r"¿Ya tienes una cuenta?", background='white', foreground='black', font=('Trebuchet MS', 9, 'bold'))
+        self.login_getaway.place(relx=0.20, rely=0.90)
+
         # Boton cuyo comando nos lleva al logeo, eliminando este frame y agregando el del logeo
-        self.sign_in_button = tk.Button(self, width=8, text='Sign In', background='white', border=0, cursor='hand2', foreground='orange')
-        self.sign_in_button.place(relx=0.59, rely=0.91)
+        self.sign_in_button = tk.Button(self, width=10, text='Iniciar Sesión', background='white', border=0, cursor='hand2', foreground='#1297cc')
+        self.sign_in_button.place(relx=0.60, rely=0.90)
         self.sign_in_button.config(command=self.switch_to_login)
     
     # Funcion que cambia al frame de inicio de sesion
@@ -57,24 +81,33 @@ class RegisterFrame(tk.Frame):
 
     # Conecta mediante el metodo bind() las funciones que cree con los eventos FocusIn and Out
     def connect_focus_events(self):
-        # Username
-        self.user.bind('<FocusIn>', lambda event: utils.user_on_enter(self.user))
-        self.user.bind('<FocusOut>', lambda event: utils.user_on_leave(self.user))
-        # Password
-        self.code.bind('<FocusIn>', lambda event: utils.code_on_enter(self.code))
-        self.code.bind('<FocusOut>', lambda event: utils.code_on_leave(self.code))
-        # Confirm Password
-        self.confirm_code.bind('<FocusIn>', lambda event: utils.confirm_on_enter(self.confirm_code))
-        self.confirm_code.bind('<FocusOut>', lambda event: utils.confirm_on_leave(self.confirm_code))
+        # Documento de identidad
+        self.userID.bind('<FocusIn>', lambda event: utils.userID_on_enter(self.userID))
+        self.userID.bind('<FocusOut>', lambda event: utils.userID_on_leave(self.userID))
+        # Nombre
+        self.full_name.bind('<FocusIn>', lambda event: utils.name_on_enter(self.full_name))
+        self.full_name.bind('<FocusOut>', lambda event: utils.name_on_leave(self.full_name))
+        # Correo
+        self.email.bind('<FocusIn>', lambda event: utils.email_on_enter(self.email))
+        self.email.bind('<FocusOut>', lambda event: utils.email_on_leave(self.email))
+        # Numero telefonico
+        self.phone.bind('<FocusIn>', lambda event: utils.phone_on_enter(self.phone))
+        self.phone.bind('<FocusOut>', lambda event: utils.phone_on_leave(self.phone))
+        # contraseña
+        self.password.bind('<FocusIn>', lambda event: utils.password_on_enter(self.password))
+        self.password.bind('<FocusOut>', lambda event: utils.password_on_leave(self.password))
+        # confirmar contraseña
+        self.confirm_password.bind('<FocusIn>', lambda event: utils.confirm_on_enter(self.confirm_password))
+        self.confirm_password.bind('<FocusOut>', lambda event: utils.confirm_on_leave(self.confirm_password))
     
     # Funcion para el boton de Create Account
     def signup(self):
         existing_users = utils.load_existing_users()
         
         # Recolecta los datos para comparar
-        username = self.user.get().strip()
-        password = self.code.get().strip()
-        confirm = self.confirm_code.get().strip()
+        username = self.userID.get().strip()
+        password = self.password.get().strip()
+        confirm = self.confirm_password.get().strip()
 
         # Verificar que ningun campo quede vacio
         if not (username and password and confirm):
