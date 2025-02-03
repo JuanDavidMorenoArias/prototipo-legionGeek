@@ -2,12 +2,20 @@ import json
 import os
 
 class User:
-  def __init__(self,full_name,userID=0,phone=0,email=None,password=None):
+  def __init__(self,
+               full_name,
+               password,
+               userID=0,
+               phone=0,
+               email=None,
+               role='participant'):
+    
     self.full_name=full_name
     self.userID=userID
     self.phone=phone
     self.email=email
     self.password=password
+    self.role = role
 
   def set_full_name(self,full_name):
     self.full_name=full_name
@@ -29,6 +37,6 @@ class User:
   def get_email(self):
     return self.email
   
-  def __str__(self):
-    text=f"{self.name} {self.id} {self.phone} {self.email}"
-    return text
+  def get_role(self):
+    return self.role
+  

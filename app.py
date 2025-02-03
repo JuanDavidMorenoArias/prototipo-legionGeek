@@ -5,6 +5,7 @@ from tkinter import ttk
 from frames.login import LogInFrame
 from frames.intro import IntroFrame
 from frames.toggle_menu import ToggleMenuFrame
+from frames.home_page import HomeFrame  # Asegúrate de importar HomeFrame
 
 import utils
 
@@ -38,10 +39,18 @@ class App():
             pass # aqui ira supongo la llamada del after login
     
     def main_show(self):
-        toggle_menu = ToggleMenuFrame(self.root,self.entry_show)
-        toggle_menu.pack(side=tk.TOP,fill=tk.X)
-        toggle_menu.pack_propagate(False)
-        toggle_menu.configure(height=70)
+        self.home_frame = HomeFrame(self.root)
+        self.home_frame.place(relx=0.5, rely=0.556, anchor='center')
+
+        self.toggle_menu = ToggleMenuFrame(self.root, self.entry_show, self.home_frame)
+        # Al iniciar sesion se pondra por defecto el frame de inicio
+
+        # Barra superior que no se quitara
+        self.toggle_menu = ToggleMenuFrame(self.root,self.entry_show,
+                                           self.home_frame)
+        self.toggle_menu.pack(side=tk.TOP,fill=tk.X)
+        self.toggle_menu.pack_propagate(False)
+        self.toggle_menu.configure(height=70)
 
         
                     
