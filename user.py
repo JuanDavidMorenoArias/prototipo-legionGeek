@@ -1,3 +1,5 @@
+from activity import Activity
+
 class User:
   def __init__(self,
                full_name,
@@ -13,6 +15,7 @@ class User:
     self.phone=phone
     self.email=email
     self.role = role
+    self.inbox = [] # cada participante tiene buzon de actividades
 
   # recibe un Usuario y lo convierte a un diccionario con sus propiedades
   def to_dict(self):
@@ -23,12 +26,13 @@ class User:
       "phone": self.phone,
       "email": self.email,
       "role": self.role,
+      "inbox": [activity.to_dict() for activity in self.inbox]
     }
   
   # recibe un diccionario y lo convierte a un objeto Usuario.
   @staticmethod
   def from_dict(data):
-    return User(
+    user = User(
       data["full_name"],
       data["userID"],
       data["password"],
@@ -36,6 +40,12 @@ class User:
       data["email"],
       data["role"],
     )
+    user.inbox = [Activity.from_dict(activity) for activity in
+                  data.get('inbox', [])]
+    return user
+  
+  def add_activity_to_inbox(self, activity):
+    self.inbox.insert(0, activity) #agregar al principio de la lista
 
 
   # setting y gettings, a excepción de la contraseña y el role ya que estos son intransferibles.
