@@ -48,7 +48,7 @@ class App():
         self.admin_home_frame.place(relx=0.5, rely=0.556, anchor='center')
 
         self.admin_toggle_menu = AdminToggleMenuFrame(self.root, self.entry_show,
-                                                      self.admin_home_frame)
+                                                      self.admin_home_frame. user)
         self.admin_toggle_menu.pack(side=tk.TOP,fill=tk.X)
         self.admin_toggle_menu.pack_propagate(False)
         self.admin_toggle_menu.configure(height=70)
@@ -59,7 +59,7 @@ class App():
         self.home_frame = HomeFrame(self.root, user)
         self.home_frame.place(relx=0.5, rely=0.556, anchor='center')
 
-        self.toggle_menu = ToggleMenuFrame(self.root, self.entry_show, self.home_frame)
+        self.toggle_menu = ToggleMenuFrame(self.root, self.entry_show, self.home_frame, user)
         # Al iniciar sesion se pondra por defecto el frame de inicio
         # Barra superior que no se quitara
         self.toggle_menu.pack(side=tk.TOP,fill=tk.X)

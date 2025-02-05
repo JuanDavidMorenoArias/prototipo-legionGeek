@@ -1,29 +1,19 @@
-class Date:
-    def __init__(self, dd=0, mm=0, yy=0):
-        if dd==0 and mm==0 and yy==0:
-          return None
-        else:
-          self._dd = dd
-          self._mm = mm
-          self._yy = yy
+from datetime import datetime
 
-    def getD(self):
-        return self._dd
+class DateTime:
+    def __init__(self):
+        self.timestamp = datetime.now()
 
-    def setD(self, dd):
-        self._dd = dd
+    def to_dict(self):
+        return {
+            "timestamp": self.timestamp.isoformat()
+        }
 
-    def getM(self):
-        return self.mm
-
-    def setM(self, mm):
-        self.mm = mm
-
-    def getY(self):
-        return self._yy
-
-    def setY(self, yy):
-        self._yy = yy
+    @staticmethod
+    def from_dict(data):
+        dt = DateTime()
+        dt.timestamp = datetime.fromisoformat(data["timestamp"])
+        return dt
 
     def __str__(self):
-      return (f"{self._dd} {self._mm} {self._yy}")
+        return self.timestamp.strftime("%Y-%m-%d %H:%M:%S")

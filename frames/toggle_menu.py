@@ -8,13 +8,14 @@ from frames.actividades_frame import ActividadesFrame
 
 class ToggleMenuFrame(tk.Frame):
     # En esta clase
-    def __init__(self,parent, log_out_callback, home_frame):
+    def __init__(self,parent, log_out_callback, home_frame, user):
         super().__init__(parent,width=1000, background='#1297cc',
                          highlightbackground='white', highlightthickness=1)    
         self.parent = parent
         self.home_frame = home_frame
         self.log_out_callback = log_out_callback
-        self.bar = SideBarFrame(self.parent,self, self.home_frame)
+        self.user = user
+        self.bar = SideBarFrame(self.parent,self, self.home_frame, self.user)
         self.create_widgets()
 
 
@@ -44,15 +45,16 @@ class ToggleMenuFrame(tk.Frame):
 # Para mayor comodidad seran dos clases en un mismo archivo ya que interactuan mucho entre ellas
 class SideBarFrame(tk.Frame):
     # En esta clase
-    def __init__(self,parent,toggle_menu, home_frame):
+    def __init__(self,parent, toggle_menu, home_frame, user):
          super().__init__(parent,width=200,height=530, background='#1297cc',
                          highlightbackground='white', highlightthickness=1)
          self.parent = parent
          self.toggle_menu = toggle_menu
          self.current_frame = home_frame
+         self.user = user
          self.create_widgets()
          self.home_frame = home_frame
-         self.proponer_frame = ProponerFrame(self.parent)
+         self.proponer_frame = ProponerFrame(self.parent, self.user)
          self.buzon_frame = BuzonFrame(self.parent)
          self.actividades_frame = ActividadesFrame(self.parent)
 

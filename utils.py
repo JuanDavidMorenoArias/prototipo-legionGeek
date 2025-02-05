@@ -1,7 +1,28 @@
 import os
 import json
 from user import User
+from idea import Idea
 
+# Carga las ideas existentes desde el archivo json con las ideas
+def load_ideas(filename='ideas.json'):
+    if os.path.exists(filename):
+        with open(filename, 'r') as file:
+            try:
+                data = json.load(file)
+                if not data:
+                    return []
+                return [Idea.from_dict(idea) for idea in data]
+            except json.JSONDecodeError:
+                return []
+    return []
+
+# guarda las ideas en el JSON
+def save_idea(new_idea, filename='ideas.json'):
+    existing_ideas = load_ideas(filename)
+    existing_ideas.append(new_idea)
+
+    with open(filename, 'w') as file:
+        json.dump([idea.to_dict() for idea in existing_ideas], file)
 # Carga los usuarios existentes desde el archivo json con los usuarios
 def load_existing_users(filename='users.json'): # recibe el nombre del archivo
     if os.path.exists(filename):
