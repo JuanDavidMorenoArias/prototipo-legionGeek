@@ -12,7 +12,14 @@ class Moderator(User):
         proposals=[]
         activities=[]
         participants=[]
-
+        
+    def importarideas():
+        try:
+            with open("ideas.txt", "r") as f:
+                return [line.strip() for line in f.readlines()]  # Leer y limpiar espacios
+        except FileNotFoundError:
+            return []
+        
     def propose_activity(self, activity, users):
         for user in users:
             if user.role == 'participante':

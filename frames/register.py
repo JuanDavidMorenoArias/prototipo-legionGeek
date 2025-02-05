@@ -144,7 +144,7 @@ class RegisterFrame(tk.Frame):
         # Si el registro cumplio con todo, guarda al usuario y contraseña
         # Actualiza la lista de usuarios existentes
         # Determinar el rol del usuario
-        role = 'moderador' if password == 'admin1040' else 'participante'
+        role = 'moderador' if password == 'Admin1040' else 'participante'
 
         if role == 'moderador':
             new_user = Moderator(full_name, user_id, password, phone, email)
