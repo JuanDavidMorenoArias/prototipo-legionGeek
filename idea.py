@@ -18,6 +18,6 @@ class Idea:
     def from_dict(data):
         return Idea(
             data['descripcion'],
-            data['sender'],
-            data['Fecha y hora en envio']
+            data['Enviado por'],
+            data['Fecha y hora de envio']
         )

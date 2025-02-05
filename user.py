@@ -1,3 +1,4 @@
+from idea import Idea
 from activity import Activity
 
 class User:
@@ -26,7 +27,7 @@ class User:
       "phone": self.phone,
       "email": self.email,
       "role": self.role,
-      "inbox": [activity.to_dict() for activity in self.inbox]
+      "inbox": [self._activity_to_dict(item) for item in self.inbox]
     }
   
   # recibe un diccionario y lo convierte a un objeto Usuario.
@@ -40,9 +41,28 @@ class User:
       data["email"],
       data["role"],
     )
-    user.inbox = [Activity.from_dict(activity) for activity in
-                  data.get('inbox', [])]
+    user.inbox = [User._dict_to_activity(item, data["role"]) for item in data.get('inbox', [])]
     return user
+  
+  @staticmethod
+  def _activity_to_dict(item):
+    if isinstance(item, Activity):
+      return {"tipo": "actividad", "data": item.to_dict()}
+    elif isinstance(item, Idea):
+      return {"tipo": "idea", "data": item.to_dict()}
+    else:
+      raise ValueError("Unknown item type in inbox")
+
+  @staticmethod
+  def _dict_to_activity(item, role):
+    if role == 'participante' and item["tipo"] == "actividad":
+      return Activity.from_dict(item["data"])
+    elif role == 'moderador' and item["tipo"] == "idea":
+      return Idea.from_dict(item["data"])
+    else:
+      raise ValueError("Unknown item type in inbox")
+  
+
   
   def add_activity_to_inbox(self, activity):
     self.inbox.insert(0, activity) #agregar al principio de la lista

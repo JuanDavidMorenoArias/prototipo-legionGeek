@@ -1,0 +1,61 @@
+[
+  {
+    "full_name": "fsdfs",
+    "userID": "43749436",
+    "password": "13526481Jj",
+    "phone": "fsdfsdf",
+    "email": "fdfsdf",
+    "role": "participante",
+    "inbox": []
+  },
+  {
+    "full_name": "sdffsfsd",
+    "userID": "1040570866",
+    "password": "Admin1040",
+    "phone": "fsdfdsfs",
+    "email": "fsdfsfs",
+    "role": "moderador",
+    "inbox": [
+      {
+        "tipo": "idea",
+        "data": {
+          "descripcion": "chajajajajaj",
+          "Enviado por": "fsdfs",
+          "Fecha y hora de envio": "2025-02-05 14:12:38"
+        }
+      },
+      {
+        "tipo": "idea",
+        "data": {
+          "descripcion": "holiiii",
+          "Enviado por": "fsdfs",
+          "Fecha y hora de envio": "2025-02-05 14:11:42"
+        }
+      },
+      {
+        "tipo": "idea",
+        "data": {
+          "descripcion": "Y estaaaaaaaaaaaaaa",
+          "Enviado por": "fsdfs",
+          "Fecha y hora de envio": "2025-02-05 14:11:16"
+        }
+      },
+      {
+        "tipo": "idea",
+        "data": {
+          "descripcion": "Y esta tambien",
+          "Enviado por": "fsdfs",
+          "Fecha y hora de envio": "2025-02-05 14:11:11"
+        }
+      },
+      {
+        "tipo": "idea",
+        "data": {
+          "descripcion": "Quiero proponer lo siguiente",
+          "Enviado por": "fsdfs",
+          "Fecha y hora de envio": "2025-02-05 14:07:07"
+        }
+      }
+    ]
+  }
+]

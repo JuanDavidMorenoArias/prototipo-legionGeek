@@ -6,13 +6,14 @@ from frames.admin_actividades_frame import AdminActividadesFrame
 
 class AdminToggleMenuFrame(tk.Frame):
     # En esta clase
-    def __init__(self,parent, log_out_callback, home_frame):
+    def __init__(self,parent, log_out_callback, home_frame, user):
         super().__init__(parent,width=1000, background='#1297cc',
                          highlightbackground='white', highlightthickness=1)    
         self.parent = parent
         self.home_frame = home_frame
+        self.user = user
         self.log_out_callback = log_out_callback
-        self.bar = AdminSideBarFrame(self.parent,self, self.home_frame)
+        self.bar = AdminSideBarFrame(self.parent,self, self.home_frame, self.user)
         self.create_widgets()
 
     def create_widgets(self):
@@ -40,15 +41,16 @@ class AdminToggleMenuFrame(tk.Frame):
 
 class AdminSideBarFrame(tk.Frame):
     # En esta clase
-    def __init__(self,parent,toggle_menu, home_frame):
+    def __init__(self,parent,toggle_menu, home_frame, user):
          super().__init__(parent,width=200,height=530, background='#1297cc',
                          highlightbackground='white', highlightthickness=1)
          self.parent = parent
          self.toggle_menu = toggle_menu
          self.current_frame = home_frame
+         self.user = user
          self.create_widgets()
          self.home_frame = home_frame
-         self.admin_buzon_frame = AdminBuzonFrame(self.parent)
+         self.admin_buzon_frame = AdminBuzonFrame(self.parent, self.user)
          self.admin_actividades_frame = AdminActividadesFrame(self.parent)
 
     def create_widgets(self): # Todos los botones pue 
