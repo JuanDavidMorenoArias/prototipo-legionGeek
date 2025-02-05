@@ -5,3 +5,24 @@ class Proposal(Activity):
         self.approved=0
         self.disapproved=0
         self.feedback=[]
+        
+    def to_dict(self):
+        return {
+            'idea': self.idea,
+            'Fecha': self.date,
+            'Capacidad': self.capacity,
+            'Objetivos': self.objective,
+            'Duracion': self.duration,
+            'Material Requerido': self.MR
+        }
+        
+    @staticmethod
+    def from_dict(data):
+        return Proposal(
+            data['idea'],
+            data['Fecha'],
+            data['Capacidad'],
+            data['Objetivos'],
+            data['Duracion'],
+            data['Material Requerido']
+        )

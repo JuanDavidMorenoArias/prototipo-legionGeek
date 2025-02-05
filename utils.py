@@ -2,6 +2,7 @@ import os
 import json
 from user import User
 from idea import Idea
+from proposal import Proposal
 
 # Carga las ideas existentes desde el archivo json con las ideas
 def load_ideas(filename='ideas.json'):
@@ -16,6 +17,19 @@ def load_ideas(filename='ideas.json'):
                 return []
     return []
 
+# Carga las porpuestas existentes desde el archivo json con las propuestas
+def load_proposals(filename='proposals.json'):
+    if os.path.exists(filename):
+        with open(filename, 'r') as file:
+            try:
+                data = json.load(file)
+                if not data:
+                    return []
+                return [Proposal.from_dict(proposal) for proposal in data]
+            except json.JSONDecodeError:
+                return []
+    return []
+
 # guarda las ideas en el JSON
 def save_idea(new_idea, filename='ideas.json'):
     existing_ideas = load_ideas(filename)
@@ -23,6 +37,15 @@ def save_idea(new_idea, filename='ideas.json'):
 
     with open(filename, 'w') as file:
         json.dump([idea.to_dict() for idea in existing_ideas], file)
+        
+# guarda las propuestas en el JSON
+def save_proposal(new_proposal, filename='proposals.json'):
+    existing_proposals = load_proposals(filename)
+    existing_proposals.append(new_proposal)
+
+    with open(filename, 'w') as file:
+        json.dump([proposal.to_dict() for proposal in existing_proposals], file)        
+        
 # Carga los usuarios existentes desde el archivo json con los usuarios
 def load_existing_users(filename='users.json'): # recibe el nombre del archivo
     if os.path.exists(filename):

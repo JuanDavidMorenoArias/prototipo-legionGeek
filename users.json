@@ -6,7 +6,19 @@
     "phone": "fsdfsdf",
     "email": "fdfsdf",
     "role": "participante",
-    "inbox": []
+    "inbox": [
+      {
+        "tipo": "actividad",
+        "data": {
+          "idea": "juegos de mesa",
+          "Fecha": "12/02/2025",
+          "Capacidad": "25",
+          "Objetivos": "diversi\u00f3n",
+          "Duracion": "2",
+          "Material Requerido": "jenga, parches, cartas"
+        }
+      }
+    ]
   },
   {
     "full_name": "sdffsfsd",
@@ -16,6 +28,14 @@
     "email": "fsdfsfs",
     "role": "moderador",
     "inbox": [
+      {
+        "tipo": "idea",
+        "data": {
+          "descripcion": "Juegos de mesa",
+          "Enviado por": "fsdfs",
+          "Fecha y hora de envio": "2025-02-05 18:34:35"
+        }
+      },
       {
         "tipo": "idea",
         "data": {
