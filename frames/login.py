@@ -85,13 +85,14 @@ class LogInFrame(tk.Frame):
             messagebox.showerror('Error', '¡Contraseña incorrecta!')
             return 
         
-         # Limpiar los campos de entrada
+        # Limpiar los campos de entrada y definir con que role se entro
+        self.user_role = user.role # guarda el rol de usuario
         self.userID.delete(0, 'end')
         self.password.delete(0, 'end')
         # Mostrar mensaje de inicio de sesión exitoso
         messagebox.showinfo('Bienvenido','Ha iniciado sesión exitosamente!')
         # Llamar al callback de inicio de sesión
-        self.login_callback(True)
+        self.login_callback(True, self.user_role, user)
 
     # Mostrar nuevamente el frame de inicio de sesión
     def reshow(self):

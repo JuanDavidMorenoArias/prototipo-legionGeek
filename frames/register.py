@@ -111,7 +111,7 @@ class RegisterFrame(tk.Frame):
         password = self.password.get().strip()
         confirm = self.confirm_password.get().strip()
         phone = self.phone.get().strip()
-        email = self.email.get().split()
+        email = self.email.get().strip()
 
         # Verificar que ningun campo quede vacio
         if not (full_name and user_id and password and confirm and phone and email):

@@ -5,9 +5,9 @@ class User:
                full_name,
                userID,
                password,
-               phone=0,
-               email=None,
-               role='participant'):
+               phone,
+               email,
+               role='participante'):
     
     self.full_name=full_name
     self.userID=userID

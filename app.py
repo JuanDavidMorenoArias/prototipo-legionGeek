@@ -6,6 +6,8 @@ from frames.login import LogInFrame
 from frames.intro import IntroFrame
 from frames.toggle_menu import ToggleMenuFrame
 from frames.inicio_frame import HomeFrame  # Asegúrate de importar HomeFrame
+from frames.admin_toggle_menu import AdminToggleMenuFrame
+from frames.admin_inicio_frame import AdminHomeFrame  # Asegúrate de importar HomeFrame
 
 import utils
 
@@ -29,25 +31,37 @@ class App():
         self.login_frame = LogInFrame(self.root,self.on_login)
         self.login_frame.place(relx=0.75,rely=0.5, anchor='center')
         self.login_frame.connect_focus_events()
-    
-    def on_login(self, login_successful):
+
+    # Lo que pasa cuando iniciamos como admin o como participante  <<< Login callback
+    def on_login(self, login_successful, user_role, user):
         if login_successful:
             self.intro_frame.destroy()
             self.login_frame.destroy()
-            self.main_show()
+            if user_role == "moderador":
+                self.admin_main_show(user)
+            else:
+                self.main_show(user)
 
-            pass # aqui ira supongo la llamada del after login
+    # Lo que mostraria si iniciamos como admin
+    def admin_main_show(self, user):
+        self.admin_home_frame = AdminHomeFrame(self.root, user)
+        self.admin_home_frame.place(relx=0.5, rely=0.556, anchor='center')
+
+        self.admin_toggle_menu = AdminToggleMenuFrame(self.root, self.entry_show,
+                                                      self.admin_home_frame)
+        self.admin_toggle_menu.pack(side=tk.TOP,fill=tk.X)
+        self.admin_toggle_menu.pack_propagate(False)
+        self.admin_toggle_menu.configure(height=70)
+
     
-    def main_show(self):
-        self.home_frame = HomeFrame(self.root)
+    
+    def main_show(self, user):
+        self.home_frame = HomeFrame(self.root, user)
         self.home_frame.place(relx=0.5, rely=0.556, anchor='center')
 
         self.toggle_menu = ToggleMenuFrame(self.root, self.entry_show, self.home_frame)
         # Al iniciar sesion se pondra por defecto el frame de inicio
-
         # Barra superior que no se quitara
-        self.toggle_menu = ToggleMenuFrame(self.root,self.entry_show,
-                                           self.home_frame)
         self.toggle_menu.pack(side=tk.TOP,fill=tk.X)
         self.toggle_menu.pack_propagate(False)
         self.toggle_menu.configure(height=70)
