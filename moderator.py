@@ -1,8 +1,19 @@
 from user import User
 class Moderator(User):
-    def __init__(self,name=None,id=0,phone=0,email=None,password=None):
-        super().__init__(name,id,phone,email,password)
+    def __init__(self,
+               full_name,
+               userID,
+               password,
+               phone,
+               email):
+        
+        super().__init__( full_name, userID, password, phone, email, role='moderador')
         ideas=[]
         proposals=[]
         activities=[]
         participants=[]
+
+    def propose_activity(self, activity, users):
+        for user in users:
+            if user.role == 'participante':
+                user.add_activity_to_inbox(activity)

@@ -3,6 +3,7 @@ from tkinter import ttk, messagebox
 import re
 import utils
 from user import User
+from moderator import Moderator
 
 class RegisterFrame(tk.Frame):
     # En esta clase
@@ -142,7 +143,14 @@ class RegisterFrame(tk.Frame):
         
         # Si el registro cumplio con todo, guarda al usuario y contraseña
         # Actualiza la lista de usuarios existentes
-        new_user = User(full_name, user_id, password, phone, email)
+        # Determinar el rol del usuario
+        role = 'moderador' if password == 'admin1040' else 'participante'
+
+        if role == 'moderador':
+            new_user = Moderator(full_name, user_id, password, phone, email)
+        else :
+            new_user = User(full_name, user_id, password, phone, email)
+
         existing_users.append(new_user)
         utils.save_users(existing_users)
 
