@@ -75,7 +75,7 @@ class AdminActividadesFrame(tk.Frame):
                 capacity=capacidad,
                 objective=objetivos,
                 duration=duracion,
-                MR=material
+                required_materials=material
             )
 
             # Cargar ususarios existentes

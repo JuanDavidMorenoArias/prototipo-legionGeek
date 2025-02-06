@@ -13,7 +13,10 @@ class Proposal(Activity):
             'Capacidad': self.capacity,
             'Objetivos': self.objective,
             'Duracion': self.duration,
-            'Material Requerido': self.required_materials
+            'Material Requerido': self.required_materials,
+            'Aprobados': self.approved,
+            'Rechazados': self.disapproved,
+            'Feedback': self.feedback
         }
         
     @staticmethod

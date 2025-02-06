@@ -1,5 +1,6 @@
 from idea import Idea
 from activity import Activity
+from proposal import Proposal
 
 class User:
   def __init__(self,
@@ -46,10 +47,12 @@ class User:
   
   @staticmethod
   def _activity_to_dict(item):
-    if isinstance(item, Activity):
-      return {"tipo": "actividad", "data": item.to_dict()}
+    if isinstance(item, Proposal):
+      return {"tipo": "propuesta", "data": item.to_dict()}
     elif isinstance(item, Idea):
       return {"tipo": "idea", "data": item.to_dict()}
+    elif isinstance(item, Activity):
+      return {"tipo": "actividad", "data": item.to_dict()}
     else:
       raise ValueError("Unknown item type in inbox")
 
@@ -57,12 +60,12 @@ class User:
   def _dict_to_activity(item, role):
     if role == 'participante' and item["tipo"] == "actividad":
       return Activity.from_dict(item["data"])
+    elif role == 'participante' and item["tipo"] == "propuesta":
+      return Proposal.from_dict(item["data"])
     elif role == 'moderador' and item["tipo"] == "idea":
       return Idea.from_dict(item["data"])
     else:
       raise ValueError("Unknown item type in inbox")
-  
-
   
   def add_activity_to_inbox(self, activity):
     self.inbox.insert(0, activity) #agregar al principio de la lista
