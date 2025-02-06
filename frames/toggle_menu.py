@@ -55,8 +55,8 @@ class SideBarFrame(tk.Frame):
          self.create_widgets()
          self.home_frame = home_frame
          self.proponer_frame = ProponerFrame(self.parent, self.user)
-         self.buzon_frame = BuzonFrame(self.parent)
-         self.actividades_frame = ActividadesFrame(self.parent)
+         self.buzon_frame = BuzonFrame(self.parent, self.user)
+         self.actividades_frame = ActividadesFrame(self.parent, self.user)
 
     def create_widgets(self): # Todos los botones pue 
 
