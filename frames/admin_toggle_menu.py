@@ -8,7 +8,7 @@ from frames.admin_buzon_frame import AdminPropuestasFrame
 class AdminToggleMenuFrame(tk.Frame):
     # En esta clase
     def __init__(self,parent, log_out_callback, home_frame, user):
-        super().__init__(parent,width=1000, background='#1297cc',
+        super().__init__(parent,width=1000, background='#9d2fcc',
                          highlightbackground='white', highlightthickness=1)    
         self.parent = parent
         self.home_frame = home_frame
@@ -20,14 +20,14 @@ class AdminToggleMenuFrame(tk.Frame):
     def create_widgets(self):
 
         # Boton que abrira el Sidebar
-        self.sidebar_button = tk.Button(self, text='☰', background='#1297cc', foreground='white',
-                                    font=('Bold',20), border = 0, activebackground='#1297cc',
+        self.sidebar_button = tk.Button(self, text='☰', background='#9d2fcc', foreground='white',
+                                    font=('Bold',20), border = 0, activebackground='#9d2fcc',
                                     activeforeground='white')
         self.sidebar_button.place(relx=0.025,rely=0.5, anchor='center')
         self.sidebar_button.config(command=self.open_bar)
 
         # Texto de "Hub"
-        toggle_text = ttk.Label(self, text='Moderador', background='#1297cc', foreground='white', font=("Dubai Medium", 20))
+        toggle_text = ttk.Label(self, text='Moderador', background='#9d2fcc', foreground='white', font=("Dubai Medium", 20))
         toggle_text.place(relx=0.15,rely=0.5, anchor='center')
 
     def open_bar(self):
@@ -43,7 +43,7 @@ class AdminToggleMenuFrame(tk.Frame):
 class AdminSideBarFrame(tk.Frame):
     # En esta clase
     def __init__(self,parent,toggle_menu, home_frame, user):
-         super().__init__(parent,width=200,height=530, background='#1297cc',
+         super().__init__(parent,width=200,height=530, background='#9d2fcc',
                          highlightbackground='white', highlightthickness=1)
          self.parent = parent
          self.toggle_menu = toggle_menu
@@ -57,33 +57,33 @@ class AdminSideBarFrame(tk.Frame):
 
     def create_widgets(self): # Todos los botones pue 
 
-        home_button = tk.Button(self, text='Inicio     🏡', font=("Dubai Medium", 16), background='#1297cc', foreground='white',
-                                 border = 0, activebackground='#1297cc', activeforeground='white')
+        home_button = tk.Button(self, text='Inicio     🏡', font=("Dubai Medium", 16), background='#9d2fcc', foreground='white',
+                                 border = 0, activebackground='#9d2fcc', activeforeground='white')
         home_button.place(relx=0.13,rely=0.05)
         home_button.config(command=lambda: self.show_frame(self.home_frame))
 
-        buzon_button = tk.Button(self, text='Bibilioteca', font=("Dubai Medium", 16), background='#1297cc', foreground='white',
-                                    border = 0, activebackground='#1297cc', activeforeground='white')
+        buzon_button = tk.Button(self, text='Bibilioteca', font=("Dubai Medium", 16), background='#9d2fcc', foreground='white',
+                                    border = 0, activebackground='#9d2fcc', activeforeground='white')
         buzon_button.place(relx=0.13,rely=0.17)
         buzon_button.config(command=lambda: self.show_frame(self.admin_buzon_frame))
 
-        actividades_button = tk.Button(self, text='Crear Actividad ', font=("Dubai Medium", 16), background='#1297cc', foreground='white',
-                                     border = 0, activebackground='#1297cc', activeforeground='white')
+        actividades_button = tk.Button(self, text='Crear Actividad ', font=("Dubai Medium", 16), background='#9d2fcc', foreground='white',
+                                     border = 0, activebackground='#9d2fcc', activeforeground='white')
         actividades_button.place(relx=0.13,rely=0.29)
         actividades_button.config(command=lambda: self.show_frame(self.admin_actividades_frame))
         
-        propuestas_button = tk.Button(self, text='Buzón  🕛', font=("Dubai Medium", 16), background='#1297cc', foreground='white',
-                                       border=0, activebackground='#1297cc', activeforeground='white')
+        propuestas_button = tk.Button(self, text='Buzón  🕛', font=("Dubai Medium", 16), background='#9d2fcc', foreground='white',
+                                       border=0, activebackground='#9d2fcc', activeforeground='white')
         propuestas_button.place(relx=0.13, rely=0.41)
         propuestas_button.config(command=lambda: self.show_frame(self.admin_propuestas_frame))
 
-        logout_button = tk.Button(self, text='Cerrar Sesión🌏', font=("Dubai Medium", 16), background='#1297cc', foreground='white',
-                                   border = 0, activebackground='#1297cc', activeforeground='white')
+        logout_button = tk.Button(self, text='Cerrar Sesión🌏', font=("Dubai Medium", 16), background='#9d2fcc', foreground='white',
+                                   border = 0, activebackground='#9d2fcc', activeforeground='white')
         logout_button.place(relx=0.13,rely=0.65)
         logout_button.config(command=self.log_out)
 
-        exit_button = tk.Button(self, text='Salir    ❎', font=("Dubai Medium", 16), background='#1297cc', foreground='white',
-                                 border = 0, activebackground='#1297cc', activeforeground='white')
+        exit_button = tk.Button(self, text='Salir    ❎', font=("Dubai Medium", 16), background='#9d2fcc', foreground='white',
+                                 border = 0, activebackground='#9d2fcc', activeforeground='white')
         exit_button.place(relx=0.13,rely=0.77)
         exit_button.config(command=self.exit_app)
        

@@ -10,10 +10,10 @@ class AdminPropuestasFrame(tk.Frame):
         self.create_widgets()
 
     def create_widgets(self):
-        titulo = tk.Label(self, text="Buzón de Actividades Propuestas", font=("Arial", 20, "bold"))
+        titulo = tk.Label(self, text="Buzón de Actividades Propuestas",background='white', foreground='#9d2fcc', font=("Trebuchet MS", 20, "bold"))
         titulo.pack(pady=20)
 
-        self.lista_actividades = tk.Listbox(self, font=("Arial", 14), width=80, height=15)
+        self.lista_actividades = tk.Listbox(self, font=("Trebuchet MS", 14), width=80, height=15)
         self.lista_actividades.pack(pady=10)
 
         self.btn_verificar = tk.Button(self, text="Verificar Estado", command=self.verificar_estado)
@@ -84,21 +84,21 @@ class AdminPropuestasFrame(tk.Frame):
         ventana.geometry("400x300")
         ventana.configure(background="white")
 
-        tk.Label(ventana, text="Detalles de la Propuesta", font=("Arial", 16, "bold"), bg="white").pack(pady=10)
-        tk.Label(ventana, text=f"Idea: {propuesta['idea']}", font=("Arial", 12), bg="white").pack(pady=5)
-        tk.Label(ventana, text=f"Estado: {estado}", font=("Arial", 12, "bold"), bg="white").pack(pady=5)
-        tk.Label(ventana, text=f"Aprobados: {propuesta['Aprobados']}", font=("Arial", 12), bg="white").pack(pady=5)
-        tk.Label(ventana, text=f"Rechazados: {propuesta['Rechazados']}", font=("Arial", 12), bg="white").pack(pady=5)
-        tk.Label(ventana, text=f"Feedback recibido: {len(propuesta['Feedback'])}", font=("Arial", 12), bg="white").pack(pady=5)
+        tk.Label(ventana, text="Detalles de la Propuesta", font=("Trebuchet MS", 16, "bold"), bg="white", foreground='black').pack(pady=10)
+        tk.Label(ventana, text=f"Idea: {propuesta['idea']}", font=("Trebuchet MS", 12), bg="white", foreground='black').pack(pady=5)
+        tk.Label(ventana, text=f"Estado: {estado}", font=("Trebuchet MS", 12, "bold"), bg="white").pack(pady=5)
+        tk.Label(ventana, text=f"Aprobados: {propuesta['Aprobados']}", font=("Trebuchet MS", 12), bg="white", foreground='black').pack(pady=5)
+        tk.Label(ventana, text=f"Rechazados: {propuesta['Rechazados']}", font=("Trebuchet MS", 12), bg="white", foreground='black').pack(pady=5)
+        tk.Label(ventana, text=f"Feedback recibidos: {len(propuesta['Feedback'])}", font=("Trebuchet MS", 12), bg="white", foreground='black').pack(pady=5)
         
         
         if estado == "Rechazada":
-            tk.Label(ventana, text="Sugerencia: Busque una nueva actividad.", font=("Arial", 12, "bold"), bg="white").pack(pady=5)
+            tk.Label(ventana, text="Sugerencia: Busque una nueva actividad.", font=("Trebuchet MS", 12, "bold"), bg="white").pack(pady=5)
 
         if estado == "Requiere Modificaciones":
-            tk.Button(ventana, text="Modificar Propuesta", command=lambda: self.abrir_modificar_propuesta(ventana, propuesta), bg="blue", fg="white", font=("Arial", 12, "bold")).pack(pady=10)
+            tk.Button(ventana, text="Modificar Propuesta", command=lambda: self.abrir_modificar_propuesta(ventana, propuesta), bg="blue", fg="white", font=("Trebuchet MS", 12, "bold")).pack(pady=10)
         else:
-            btn_cerrar = tk.Button(ventana, text="Cerrar", command=ventana.destroy, bg="red", fg="white", font=("Arial", 12, "bold"))
+            btn_cerrar = tk.Button(ventana, text="Cerrar", command=ventana.destroy, bg="red", fg="white", font=("Trebuchet MS", 12, "bold"))
             btn_cerrar.pack(pady=10)
 
     def abrir_modificar_propuesta(self, ventana, propuesta):

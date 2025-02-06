@@ -11,10 +11,10 @@ class BuzonFrame(tk.Frame):
         self.create_widgets()
 
     def create_widgets(self):
-        titulo = tk.Label(self, text="Buzón de Actividades", font=("Arial", 20, "bold"))
+        titulo = tk.Label(self, text="Buzón de Actividades", background='white', foreground='#1872d9',font=("Trebuchet MS", 20, "bold"))
         titulo.pack(pady=20)
 
-        self.lista_actividades = tk.Listbox(self, font=("Arial", 14), width=80, height=15)
+        self.lista_actividades = tk.Listbox(self, font=("Trebuchet MS", 14), width=80, height=15)
         self.lista_actividades.pack(pady=10)
 
         boton_ver_detalles = tk.Button(self, text="Ver Detalles", command=self.ver_detalles)
@@ -55,7 +55,7 @@ class DetallesActividadVentana(tk.Toplevel):
             f"Material Requerido: {propuesta.required_materials}\n"
         )
 
-        tk.Label(self, text=detalles, justify="left", font=("Arial", 12)).pack(pady=10)
+        tk.Label(self, text=detalles, justify="left", font=("Trebuchet MS", 12)).pack(pady=10)
 
         btn_aprobar = tk.Button(self, text="Aprobar", command=self.aprobar)
         btn_aprobar.pack(pady=5)

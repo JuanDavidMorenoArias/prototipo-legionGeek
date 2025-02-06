@@ -14,10 +14,10 @@ class AdminBuzonFrame(tk.Frame):
 
     def create_widgets(self):
         # Crear el título y colocarlo arriba
-        titulo = tk.Label(self, text="Buzón de Ideas", foreground='#1297cc', background='white', font=("Trebuchet MS", 20, "bold"))
+        titulo = tk.Label(self, text="Buzón de Ideas", foreground='#9d2fcc', background='white', font=("Trebuchet MS", 20, "bold"))
         titulo.place(relx=0.75, rely=0.07, anchor='center')  # Espaciado arriba y abajo
 
-        titulo_detalle = tk.Label(self, text="Detalle de Idea", foreground='#1297cc', background='white', font=("Trebuchet MS", 20, "bold"))
+        titulo_detalle = tk.Label(self, text="Detalle de Idea", foreground='#9d2fcc', background='white', font=("Trebuchet MS", 20, "bold"))
         titulo_detalle.place(relx=0.25, rely=0.07, anchor='center')  # Espaciado arriba y abajo
 
         # Crear el cuadro de texto más grande
