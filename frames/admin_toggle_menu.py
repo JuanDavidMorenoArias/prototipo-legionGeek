@@ -26,7 +26,7 @@ class AdminToggleMenuFrame(tk.Frame):
         self.sidebar_button.config(command=self.open_bar)
 
         # Texto de "Hub"
-        toggle_text = ttk.Label(self, text='Administrador', background='#1297cc', foreground='white', font=("Dubai Medium", 20))
+        toggle_text = ttk.Label(self, text='Moderador', background='#1297cc', foreground='white', font=("Dubai Medium", 20))
         toggle_text.place(relx=0.15,rely=0.5, anchor='center')
 
     def open_bar(self):

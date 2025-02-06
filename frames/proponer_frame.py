@@ -20,15 +20,15 @@ class ProponerFrame(tk.Frame):
 
     def create_widgets(self):
         # Crear el título y colocarlo arriba
-        titulo = tk.Label(self, text="Proponer Idea", font=("Arial", 20, "bold"))
+        titulo = tk.Label(self, text="Proponer Idea", font=("Trebuchet MS", 20, "bold"))
         titulo.grid(row=0, column=0, pady=20)  # Espaciado arriba y abajo
 
         # Crear el cuadro de texto más grande
-        self.entrada = tk.Entry(self, font=("Arial", 16), width=40)  # Fuente más grande y más ancho
+        self.entrada = tk.Entry(self, font=("Trebuchet MS", 16), width=40)  # Fuente más grande y más ancho
         self.entrada.grid(row=1, column=0, pady=10)  # Espacio abajo
 
         # Crear botón de enviar
-        boton_enviar = tk.Button(self, text="Enviar", font=("Arial", 14), command=self.enviar_idea)
+        boton_enviar = tk.Button(self, text="Enviar", font=("Trebuchet MS", 14), command=self.enviar_idea)
         boton_enviar.grid(row=2, column=0, pady=20)  # Espaciado abajo
 
 

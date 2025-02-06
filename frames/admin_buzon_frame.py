@@ -6,7 +6,7 @@ from idea import Idea
 
 class AdminBuzonFrame(tk.Frame):
     def __init__(self, parent, user):
-        super().__init__(parent, width=995, height=525, background='red',
+        super().__init__(parent, width=995, height=525, background='white',
                          highlightbackground='white', highlightthickness=0)
         self.parent = parent
         self.user = user
@@ -14,16 +14,26 @@ class AdminBuzonFrame(tk.Frame):
 
     def create_widgets(self):
         # Crear el título y colocarlo arriba
-        titulo = tk.Label(self, text="Buzón de Ideas", font=("Arial", 20, "bold"))
-        titulo.place(relx=0.5, rely=0.2, anchor='center')  # Espaciado arriba y abajo
+        titulo = tk.Label(self, text="Buzón de Ideas", foreground='#1297cc', background='white', font=("Trebuchet MS", 20, "bold"))
+        titulo.place(relx=0.75, rely=0.07, anchor='center')  # Espaciado arriba y abajo
+
+        titulo_detalle = tk.Label(self, text="Detalle de Idea", foreground='#1297cc', background='white', font=("Trebuchet MS", 20, "bold"))
+        titulo_detalle.place(relx=0.25, rely=0.07, anchor='center')  # Espaciado arriba y abajo
 
         # Crear el cuadro de texto más grande
-        self.inbox_listbox = tk.Listbox(self, background='orange', font=("Arial", 16), width=50, height=10)
-        self.inbox_listbox.place(relx=0.5, rely=0.5, anchor='center')  # Espacio abajo
+        self.inbox_listbox = tk.Listbox(self, background='black', font=("Trebuchet MS", 14), width=40, height=15)
+        self.inbox_listbox.place(relx=0.75, rely=0.5, anchor='center')  # Espacio abajo
 
+        self.detalle = tk.Label(self, font=("Trebuchet MS", 12, "bold"),background='black', width=48, height=17, justify=tk.LEFT)
+        self.detalle.place(relx=0.27, rely=0.5, anchor='center')  # Espaciado arriba y abajo
         # Crear botón de eliminar
-        boton_eliminar = tk.Button(self, text="Eliminar", background='red', font=("Arial", 14), command=self.eliminar_idea)
-        boton_eliminar.place(relx=0.5, rely=0.8, anchor='center')  # Espaciado abajo
+        boton_eliminar = tk.Button(self, text="Eliminar", background='red', font=("Trebuchet MS", 14), command=self.eliminar_idea)
+        boton_eliminar.place(relx=0.75, rely=0.91, anchor='w')  # Espaciado abajo
+
+        # Crear botón de detalle
+        boton_eliminar = tk.Button(self, text="Detalle", background='green', font=("Trebuchet MS", 14), command=self.detallar_idea)
+        boton_eliminar.place(relx=0.65, rely=0.91, anchor='w')  # Espaciado abajo
+
 
         self.load_inbox()
 
@@ -31,8 +41,15 @@ class AdminBuzonFrame(tk.Frame):
         # Cargar las ideas del buzón del usuario
         for item in self.user.inbox:
             if isinstance(item, Idea):
-                display_text = f"{item.description} - Enviado por: {item.sender} a las {item.timestamp}"
+                display_text = f"{item.sender} a las {item.timestamp}"
                 self.inbox_listbox.insert(tk.END, display_text)
+
+    def detallar_idea(self):
+        selected_index = self.inbox_listbox.curselection()
+        if selected_index:
+            idea = self.user.inbox[selected_index[0]]
+            detalle = f"Descripción: {idea.description}\n\nEnviado por: {idea.sender}\n\nFecha y hora de envío: {idea.timestamp}"
+            self.detalle.config(text=detalle, foreground='white', wraplength=400)
 
     def eliminar_idea(self):
         # Eliminar la idea seleccionada
