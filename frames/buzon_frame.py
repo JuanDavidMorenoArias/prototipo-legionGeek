@@ -52,7 +52,7 @@ class DetallesActividadVentana(tk.Toplevel):
             f"Capacidad: {propuesta.capacity}\n"
             f"Objetivos: {propuesta.objective}\n"
             f"Duración: {propuesta.duration} horas\n"
-            f"Material Requerido: {propuesta.MR}"
+            f"Material Requerido: {propuesta.required_materials}"
         )
 
         tk.Label(self, text=detalles, justify="left", font=("Arial", 12)).pack(pady=10)

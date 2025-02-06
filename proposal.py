@@ -1,7 +1,7 @@
 from activity import Activity
 class Proposal(Activity):
-    def __init__(self,idea=None,date=None,capacity=0,objective=None,duration=0,MR=[]):
-        super().__init__(idea,date,capacity,objective,duration,MR)
+    def __init__(self,idea, date, capacity, objective, duration, required_materials):
+        super().__init__(idea,date,capacity,objective,duration,required_materials)
         self.approved=0
         self.disapproved=0
         self.feedback=[]
@@ -13,7 +13,7 @@ class Proposal(Activity):
             'Capacidad': self.capacity,
             'Objetivos': self.objective,
             'Duracion': self.duration,
-            'Material Requerido': self.MR
+            'Material Requerido': self.required_materials
         }
         
     @staticmethod
