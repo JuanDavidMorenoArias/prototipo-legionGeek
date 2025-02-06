@@ -10,20 +10,20 @@ class Activity:
     def to_dict(self):
         return {
             "idea": self.idea,
-            "date": self.date,
-            "capacity": self.capacity,
-            "objective": self.objective,
-            "duration": self.duration,
-            "required_materials": self.required_materials
+            "Fecha": self.date,
+            "Capacidad": self.capacity,
+            "Objetivos": self.objective,
+            "Duracion": self.duration,
+            "Material Requerido": self.required_materials
         }
 
     @staticmethod
     def from_dict(data):
         return Activity(
             data["idea"],
-            data["date"],
-            data["capacity"],
-            data["objective"],
-            data["duration"],
-            data["required_materials"]
+            data["Fecha"],
+            data["Capacidad"],
+            data["Objetivos"],
+            data["Duracion"],
+            data["Material Requerido"]
         )
