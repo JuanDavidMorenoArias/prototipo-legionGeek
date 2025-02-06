@@ -1,8 +1,9 @@
 import sys
 import tkinter as tk
 from tkinter import ttk
-from frames.admin_buzon_frame import AdminBuzonFrame
+from frames.admin_biblioteca_frame import AdminBuzonFrame
 from frames.admin_actividades_frame import AdminActividadesFrame
+from frames.admin_buzon_frame import AdminPropuestasFrame
 
 class AdminToggleMenuFrame(tk.Frame):
     # En esta clase
@@ -52,6 +53,7 @@ class AdminSideBarFrame(tk.Frame):
          self.home_frame = home_frame
          self.admin_buzon_frame = AdminBuzonFrame(self.parent, self.user)
          self.admin_actividades_frame = AdminActividadesFrame(self.parent)
+         self.admin_propuestas_frame = AdminPropuestasFrame(self.parent)
 
     def create_widgets(self): # Todos los botones pue 
 
@@ -60,7 +62,7 @@ class AdminSideBarFrame(tk.Frame):
         home_button.place(relx=0.13,rely=0.05)
         home_button.config(command=lambda: self.show_frame(self.home_frame))
 
-        buzon_button = tk.Button(self, text='Buzón  🕛', font=("Dubai Medium", 16), background='#1297cc', foreground='white',
+        buzon_button = tk.Button(self, text='Bibilioteca', font=("Dubai Medium", 16), background='#1297cc', foreground='white',
                                     border = 0, activebackground='#1297cc', activeforeground='white')
         buzon_button.place(relx=0.13,rely=0.17)
         buzon_button.config(command=lambda: self.show_frame(self.admin_buzon_frame))
@@ -69,6 +71,11 @@ class AdminSideBarFrame(tk.Frame):
                                      border = 0, activebackground='#1297cc', activeforeground='white')
         actividades_button.place(relx=0.13,rely=0.29)
         actividades_button.config(command=lambda: self.show_frame(self.admin_actividades_frame))
+        
+        propuestas_button = tk.Button(self, text='Buzón  🕛', font=("Dubai Medium", 16), background='#1297cc', foreground='white',
+                                       border=0, activebackground='#1297cc', activeforeground='white')
+        propuestas_button.place(relx=0.13, rely=0.41)
+        propuestas_button.config(command=lambda: self.show_frame(self.admin_propuestas_frame))
 
         logout_button = tk.Button(self, text='Cerrar Sesión🌏', font=("Dubai Medium", 16), background='#1297cc', foreground='white',
                                    border = 0, activebackground='#1297cc', activeforeground='white')
@@ -96,4 +103,5 @@ class AdminSideBarFrame(tk.Frame):
         self.home_frame.destroy()
         self.admin_buzon_frame.destroy()
         self.admin_actividades_frame.destroy()
+        self.admin_propuestas_frame.destroy()
         self.toggle_menu.log_out_callback()

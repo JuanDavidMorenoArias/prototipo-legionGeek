@@ -74,7 +74,7 @@ class DetallesActividadVentana(tk.Toplevel):
         # Buscar al participante en el JSON
         for user in users:
             if user["userID"] == self.participant.userID: 
-                user["inbox"] = [prop for prop in user["inbox"] if not (prop["data"]["idea"] == self.propuesta.idea and prop["data"]["Fecha"] == self.propuesta.date)]
+                user["inbox"] = [prop for prop in user["inbox"] if not (prop["data"]["idea"] == self.propuesta.idea)]
                 break
 
         # Guardar los cambios en el archivo JSON
@@ -86,7 +86,7 @@ class DetallesActividadVentana(tk.Toplevel):
             proposals = json.load(archivo)
         
         for prop in proposals:
-            if prop["idea"] == self.propuesta.idea and prop["Fecha"] == self.propuesta.date:
+            if prop["idea"] == self.propuesta.idea:
                 prop["Aprobados"] += 1
 
         with open("proposals.json", "w", encoding="utf-8") as archivo:
@@ -105,7 +105,7 @@ class DetallesActividadVentana(tk.Toplevel):
             proposals = json.load(archivo)
 
         for prop in proposals:
-            if prop["idea"] == self.propuesta.idea and prop["Fecha"] == self.propuesta.date:
+            if prop["idea"] == self.propuesta.idea:
                 prop["Rechazados"] += 1
 
         with open("proposals.json", "w", encoding="utf-8") as archivo:
@@ -126,7 +126,7 @@ class DetallesActividadVentana(tk.Toplevel):
                 proposals = json.load(archivo)
 
             for prop in proposals:
-                if prop["idea"] == self.propuesta.idea and prop["Fecha"] == self.propuesta.date:
+                if prop["idea"] == self.propuesta.idea:
                     prop["Feedback"].append(cambios)
 
             with open("proposals.json", "w", encoding="utf-8") as archivo:

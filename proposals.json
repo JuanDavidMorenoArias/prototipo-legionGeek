@@ -1,9 +1,9 @@
 [
   {
     "idea": "juegos de mesa",
-    "Fecha": "12/07/2025",
-    "Capacidad": "23",
-    "Objetivos": "jugar",
+    "Fecha": "02/07/2025",
+    "Capacidad": "56",
+    "Objetivos": "diversion",
     "Duracion": "3",
     "Material Requerido": "juegos",
     "Aprobados": 0,
@@ -12,13 +12,13 @@
   },
   {
     "idea": "torneo r6",
-    "Fecha": "mañana",
-    "Capacidad": "12",
+    "Fecha": "12/07/2025",
+    "Capacidad": "30",
     "Objetivos": "ganar",
     "Duracion": "11",
     "Material Requerido": "pc",
-    "Aprobados": 0,
-    "Rechazados": 0,
-    "Feedback": []
+    "Aprobados": 1,
+    "Rechazados": 3,
+    "Feedback": ["ds", "dsa"]
   }
 ]
