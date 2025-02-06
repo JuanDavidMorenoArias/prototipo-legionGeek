@@ -21,10 +21,10 @@ class AdminBuzonFrame(tk.Frame):
         titulo_detalle.place(relx=0.25, rely=0.07, anchor='center')  # Espaciado arriba y abajo
 
         # Crear el cuadro de texto más grande
-        self.inbox_listbox = tk.Listbox(self, background='black', font=("Trebuchet MS", 14), width=40, height=15)
+        self.inbox_listbox = tk.Listbox(self, background='black',foreground='white', font=("Trebuchet MS", 14), width=40, height=15)
         self.inbox_listbox.place(relx=0.75, rely=0.5, anchor='center')  # Espacio abajo
 
-        self.detalle = tk.Label(self, font=("Trebuchet MS", 12, "bold"),background='black', width=48, height=17, justify=tk.LEFT)
+        self.detalle = tk.Label(self, font=("Trebuchet MS", 12, "bold"),foreground='white',background='black', width=48, height=17, justify=tk.LEFT)
         self.detalle.place(relx=0.27, rely=0.5, anchor='center')  # Espaciado arriba y abajo
         # Crear botón de eliminar
         boton_eliminar = tk.Button(self, text="Eliminar", background='red', font=("Trebuchet MS", 14), command=self.eliminar_idea)
