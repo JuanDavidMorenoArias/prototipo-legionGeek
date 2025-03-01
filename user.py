@@ -1,6 +1,7 @@
 from idea import Idea
-from activity import Activity
 from proposal import Proposal
+from activityIns import ActivityIns
+from final_activity import FinalActivity
 
 class User:
   def __init__(self,
@@ -48,20 +49,24 @@ class User:
   @staticmethod
   def _activity_to_dict(item):
     if isinstance(item, Proposal):
-      return {"tipo": "propuesta", "data": item.to_dict()}
+      return {item.to_dict()}
     elif isinstance(item, Idea):
       return {"tipo": "idea", "data": item.to_dict()}
-    elif isinstance(item, Activity):
-      return {"tipo": "actividad", "data": item.to_dict()}
+    elif isinstance(item, ActivityIns):
+      return {item.to_dict()}
+    elif isinstance(item, FinalActivity):
+      return {item.to_dict()}
     else:
       raise ValueError("Unknown item type in inbox")
 
   @staticmethod
   def _dict_to_activity(item, role):
-    if role == 'participante' and item["tipo"] == "actividad":
-      return Activity.from_dict(item["data"])
-    elif role == 'participante' and item["tipo"] == "propuesta":
-      return Proposal.from_dict(item["data"])
+    if role == 'participante' and item.get("Actividad"):
+      return ActivityIns.from_dict(item)
+    elif role == 'participante' and item.get("Propuesta"):
+      return Proposal.from_dict(item)
+    elif role == 'participante' and item.get("Finalizada"):
+      return FinalActivity.from_dict(item)
     elif role == 'moderador' and item["tipo"] == "idea":
       return Idea.from_dict(item["data"])
     else:

@@ -14,9 +14,11 @@ class Proposal(Activity):
             'Objetivos': self.objective,
             'Duracion': self.duration,
             'Material Requerido': self.required_materials,
-            'Aprobados': self.approved,
-            'Rechazados': self.disapproved,
-            'Feedback': self.feedback
+            "Propuesta": {
+                'Aprobados': self.approved,
+                'Rechazados': self.disapproved,
+                'Feedback': self.feedback  
+            }
         }
         
     @staticmethod

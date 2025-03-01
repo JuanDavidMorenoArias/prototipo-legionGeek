@@ -78,10 +78,10 @@ class AdminActividadesFrame(tk.Frame):
                 required_materials=material
             )
 
-            # Cargar ususarios existentes
+            # Cargar usuarios existentes
             users = utils.load_existing_users()
             
-            # Verificar si algún participante tiene 2 o más propuestas
+            # Verificar si algún participante tiene 5 o más propuestas
             limite_superado = any(len(user.inbox) >= 5 for user in users if user.role == 'participante')
             
             if limite_superado:

@@ -26,11 +26,20 @@ class AdminPropuestasFrame(tk.Frame):
 
     def cargar_propuestas(self):
         self.lista_propuestas.delete(0, tk.END)
-        with open("proposals.json", "r", encoding="utf-8") as archivo:
-            propuestas = json.load(archivo)
+        with open("activities.json", "r", encoding="utf-8") as archivo:
+            actividades = json.load(archivo)
         
-        for propuesta in propuestas:
-            self.lista_propuestas.insert(tk.END, f"{propuesta['idea']}")
+        for actividad in actividades:
+            if actividad.get("Propuesta"):
+                self.lista_propuestas.insert(tk.END, f"{actividad['idea']}")
+
+            if actividad.get("Actividad"):
+                self.lista_actividadesI.insert(tk.END, f"{actividad['idea']}")
+
+            if actividad.get("Finalizada"):
+                self.lista_actividadesfinalizadas.insert(tk.END, f"{actividad['idea']}")
+
+            
 
     def verificar_estado(self):
         selected_index = self.lista_propuestas.curselection()

@@ -2,6 +2,9 @@ import tkinter as tk
 from tkinter import messagebox, simpledialog
 import utils
 import json
+from proposal import Proposal
+from activityIns import ActivityIns
+from final_activity import FinalActivity
 
 class BuzonFrame(tk.Frame):
     def __init__(self, parent, participant):
@@ -14,8 +17,12 @@ class BuzonFrame(tk.Frame):
         titulo = tk.Label(self, text="Buzón de Actividades", background='white', foreground='#1872d9',font=("Trebuchet MS", 20, "bold"))
         titulo.pack(pady=20)
 
-        self.lista_actividades = tk.Listbox(self, font=("Trebuchet MS", 14), width=80, height=15)
-        self.lista_actividades.pack(pady=10)
+        self.lista_propuestas = tk.Listbox(self, font=("Trebuchet MS", 14), width=25, height=15)
+        self.lista_actividadesI = tk.Listbox(self, font=("Trebuchet MS", 14), width=25, height=15)
+        self.lista_actividadesfinalizadas = tk.Listbox(self, font=("Trebuchet MS", 14), width=25, height=15)
+        self.lista_propuestas.pack(side="left", padx=5, pady=5, fill="both", expand=True)
+        self.lista_actividadesI.pack(side="left", padx=5, pady=5, fill="both", expand=True)
+        self.lista_actividadesfinalizadas.pack(side="left", padx=5, pady=5, fill="both", expand=True)
 
         boton_ver_detalles = tk.Button(self, text="Ver Detalles", command=self.ver_detalles)
         boton_ver_detalles.pack(pady=10)
@@ -23,12 +30,19 @@ class BuzonFrame(tk.Frame):
         self.cargar_actividades()
 
     def cargar_actividades(self):
-        self.lista_actividades.delete(0, tk.END)
-        for idx, propuesta in enumerate(self.participant.inbox):
-            self.lista_actividades.insert(tk.END, f"{idx + 1}. {propuesta.idea}")
+        #self.lista_actividades.delete(0, tk.END)
+        for idx, actividad in enumerate(self.participant.inbox):
+            if isinstance(actividad, Proposal):
+                self.lista_propuestas.insert(tk.END, f"{actividad.getIdea()}")
+
+            if isinstance(actividad, ActivityIns):
+                self.lista_actividadesI.insert(tk.END, f"{actividad.getIdea()}")
+
+            if isinstance(actividad, FinalActivity):
+                self.lista_actividadesfinalizadas.insert(tk.END, f"{actividad.getIdea()}")
 
     def ver_detalles(self):
-        seleccion = self.lista_actividades.curselection()
+        seleccion = self.lista_propuestas.curselection()
         if seleccion:
             index = seleccion[0]
             propuesta = self.participant.inbox[index]

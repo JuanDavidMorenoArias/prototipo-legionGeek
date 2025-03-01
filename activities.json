@@ -1,0 +1,37 @@
+[
+  {
+    "idea": "torneo fifa",
+    "Fecha": "12/07/2025",
+    "Capacidad": "30",
+    "Objetivos": "ganar",
+    "Duracion": "11",
+    "Material Requerido": "pc",
+    "Actividad": {
+      "Inscripciones": 0
+    }
+  },
+  {
+    "idea": "torneo pubg",
+    "Fecha": "12/07/2025",
+    "Capacidad": "30",
+    "Objetivos": "ganar",
+    "Duracion": "11",
+    "Material Requerido": "pc",
+    "Finalizada": {
+      "Feedback": []
+    }
+  },
+  {
+    "idea": "torneo r6",
+    "Fecha": "12/07/2025",
+    "Capacidad": "30",
+    "Objetivos": "ganar",
+    "Duracion": "11",
+    "Material Requerido": "pc",
+    "Propuesta": {
+      "Aprobados": 1,
+      "Rechazados": 3,
+      "Feedback": ["ds", "dsa"]
+    }
+  }
+]

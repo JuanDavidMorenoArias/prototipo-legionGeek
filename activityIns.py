@@ -1,9 +1,8 @@
 from activity import Activity
-class FinalActivity(Activity):
-    def __init__(self,idea=None,date=None,capacity=0,objective=None,duration=0,MR=[]):
-        super().__init__(idea, date, capacity,objective, duration,MR)
-        self.participants=[]
-        self.feedback=[]
+class ActivityIns(Activity):
+    def __init__(self,idea, date, capacity, objective, duration, required_materials):
+        super().__init__(idea,date,capacity,objective,duration,required_materials)
+        self.inscritos = []
 
     def to_dict(self):
         return {
@@ -13,15 +12,15 @@ class FinalActivity(Activity):
             "Objetivos": self.objective,
             "Duracion": self.duration,
             "Material Requerido": self.required_materials,
-            "Participates": self.participants,
-            "Finalizada": {
-                "Feedback": self.feedback
+            "Incsritos": self.inscritos,
+            "Actividad": {
+                "Inscripciones": 0
             }
         }
 
     @staticmethod
     def from_dict(data):
-        return FinalActivity(
+        return ActivityIns(
             data["idea"],
             data["Fecha"],
             data["Capacidad"],

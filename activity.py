@@ -7,23 +7,5 @@ class Activity:
         self.duration = duration
         self.required_materials = required_materials
 
-    def to_dict(self):
-        return {
-            "idea": self.idea,
-            "Fecha": self.date,
-            "Capacidad": self.capacity,
-            "Objetivos": self.objective,
-            "Duracion": self.duration,
-            "Material Requerido": self.required_materials
-        }
-
-    @staticmethod
-    def from_dict(data):
-        return Activity(
-            data["idea"],
-            data["Fecha"],
-            data["Capacidad"],
-            data["Objetivos"],
-            data["Duracion"],
-            data["Material Requerido"]
-        )
+    def getIdea(self):
+        return self.idea

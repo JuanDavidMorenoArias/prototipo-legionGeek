@@ -18,7 +18,7 @@ def load_ideas(filename='ideas.json'):
     return []
 
 # Carga las porpuestas existentes desde el archivo json con las propuestas
-def load_proposals(filename='proposals.json'):
+def load_proposals(filename='activities.json'):
     if os.path.exists(filename):
         with open(filename, 'r') as file:
             try:
