@@ -13,30 +13,33 @@ class AdminPropuestasFrame(tk.Frame):
         titulo = tk.Label(self, text="Buzón de Actividades Propuestas",background='white', foreground='#9d2fcc', font=("Trebuchet MS", 20, "bold"))
         titulo.pack(pady=20)
 
-        self.lista_actividades = tk.Listbox(self, font=("Trebuchet MS", 14), width=80, height=15)
-        self.lista_actividades.pack(pady=10)
-
+        self.lista_propuestas = tk.Listbox(self, font=("Trebuchet MS", 14), width=25, height=15)
+        self.lista_actividadesI = tk.Listbox(self, font=("Trebuchet MS", 14), width=25, height=15)
+        self.lista_actividadesfinalizadas = tk.Listbox(self, font=("Trebuchet MS", 14), width=25, height=15)
+        self.lista_propuestas.pack(side="left", padx=5, pady=5, fill="both", expand=True)
+        self.lista_actividadesI.pack(side="left", padx=5, pady=5, fill="both", expand=True)
+        self.lista_actividadesfinalizadas.pack(side="left", padx=5, pady=5, fill="both", expand=True)
         self.btn_verificar = tk.Button(self, text="Verificar Estado", command=self.verificar_estado)
         self.btn_verificar.pack(pady=10)
 
         self.cargar_propuestas()
 
     def cargar_propuestas(self):
-        self.lista_actividades.delete(0, tk.END)
+        self.lista_propuestas.delete(0, tk.END)
         with open("proposals.json", "r", encoding="utf-8") as archivo:
             propuestas = json.load(archivo)
         
         for propuesta in propuestas:
-            self.lista_actividades.insert(tk.END, f"{propuesta['idea']}")
+            self.lista_propuestas.insert(tk.END, f"{propuesta['idea']}")
 
     def verificar_estado(self):
-        selected_index = self.lista_actividades.curselection()
+        selected_index = self.lista_propuestas.curselection()
         
         if not selected_index:
             messagebox.showwarning("Advertencia", "Por favor, seleccione una propuesta de la lista.")
             return
 
-        propuesta_seleccionada = self.lista_actividades.get(selected_index[0])
+        propuesta_seleccionada = self.lista_propuestas.get(selected_index[0])
 
         with open("users.json", "r", encoding="utf-8") as archivo:
             usuarios = json.load(archivo)
