@@ -12,7 +12,7 @@ class ActivityIns(Activity):
             "Objetivos": self.objective,
             "Duracion": self.duration,
             "Material Requerido": self.required_materials,
-            "Incsritos": self.inscritos,
+            "Inscritos": self.inscritos,
             "Actividad": {
                 "Inscripciones": 0
             }

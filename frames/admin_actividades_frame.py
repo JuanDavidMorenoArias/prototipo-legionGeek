@@ -89,7 +89,50 @@ class AdminActividadesFrame(tk.Frame):
                 return  # Salir sin guardar la propuesta
             
             # Guardar la propuesta y enviarla a los participantes
-            utils.save_proposal(nueva_propuesta)
+            utils.save_activity(nueva_propuesta)
+            
+            users = utils.load_existing_users()
+            for user in users:
+                if user.role == 'participante':
+                    user.add_activity_to_inbox(nueva_propuesta)
+            utils.save_users(users)
+
+            # Limpiar campos
+            self.clear_fields()
+            messagebox.showinfo("Éxito", "¡Propuesta enviada correctamente!")
+        else:
+            messagebox.showwarning("Advertencia", "Todos los campos deben estar completos.")
+
+    def enviar_propuesta(self):
+        idea = self.entrada_idea.get()
+        fecha = self.entrada_fecha.get()
+        capacidad = self.entrada_capacidad.get()
+        objetivos = self.entrada_objetivos.get()
+        duracion = self.entrada_duracion.get()
+        material = self.entrada_material.get()
+
+        if all([idea.strip(), fecha.strip(), capacidad.strip(), objetivos.strip(), duracion.strip(), material.strip()]):
+            nueva_propuesta = Proposal(
+                idea=idea,
+                date=fecha,
+                capacity=capacidad,
+                objective=objetivos,
+                duration=duracion,
+                required_materials=material
+            )
+
+            # Cargar usuarios existentes
+            users = utils.load_existing_users()
+            
+            # Verificar si algún participante tiene 5 o más propuestas
+            limite_superado = any(len(user.inbox) >= 5 for user in users if user.role == 'participante')
+            
+            if limite_superado:
+                messagebox.showwarning("Límite de propuestas alcanzado", "No se puede enviar más propuestas, los participantes ya cuentan con 2 propuestas.")
+                return  # Salir sin guardar la propuesta
+            
+            # Guardar la propuesta y enviarla a los participantes
+            utils.save_activity(nueva_propuesta)
             
             users = utils.load_existing_users()
             for user in users:

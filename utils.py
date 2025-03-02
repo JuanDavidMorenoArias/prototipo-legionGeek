@@ -39,13 +39,36 @@ def save_idea(new_idea, filename='ideas.json'):
         json.dump([idea.to_dict() for idea in existing_ideas], file)
         
 # guarda las propuestas en el JSON
-def save_proposal(new_proposal, filename='proposals.json'):
+def save_activity(new_activity, filename='activities.json'):
     existing_proposals = load_proposals(filename)
-    existing_proposals.append(new_proposal)
+    existing_proposals.append(new_activity)
 
     with open(filename, 'w') as file:
         json.dump([proposal.to_dict() for proposal in existing_proposals], file)        
-        
+
+# Actualiza las actividades
+def update_activity(activity, tipo, filename='activities.json'):
+    with open(filename, 'r+') as file:
+        data = json.load(file)
+        if activity in data:
+            if tipo == "Actividad":
+                data.remove(activity)
+                if activity.get("Propuesta"):
+                    activity.pop("Propuesta")
+                activity[tipo] = {"Inscripciones": 0}
+                data.append(activity)
+                file.seek(0)
+                json.dump(data, file, indent=4)
+                file.truncate()
+            if tipo == "Finalizada":
+                data.remove(activity)
+                activity.pop("Actividad")
+                activity[tipo] = {"Feedback": []}
+                data.append(activity)
+                file.seek(0)
+                json.dump(data, file, indent=4)
+                file.truncate()
+     
 # Carga los usuarios existentes desde el archivo json con los usuarios
 def load_existing_users(filename='users.json'): # recibe el nombre del archivo
     if os.path.exists(filename):

@@ -33,5 +33,31 @@
       "Rechazados": 3,
       "Feedback": ["ds", "dsa"]
     }
+  },
+  {
+    "idea": "torneo fortnite",
+    "Fecha": "12/07/2025",
+    "Capacidad": "30",
+    "Objetivos": "ganar",
+    "Duracion": "11",
+    "Material Requerido": "pc",
+    "Propuesta": {
+      "Aprobados": 5,
+      "Rechazados": 3,
+      "Feedback": ["ds", "dsa"]
+    }
+  },
+  {
+    "idea": "torneo cod",
+    "Fecha": "12/07/2025",
+    "Capacidad": "30",
+    "Objetivos": "ganar",
+    "Duracion": "11",
+    "Material Requerido": "pc",
+    "Propuesta": {
+      "Aprobados": 1,
+      "Rechazados": 3,
+      "Feedback": ["ds", "dsa", "asdada", "dadad"]
+    }
   }
 ]
