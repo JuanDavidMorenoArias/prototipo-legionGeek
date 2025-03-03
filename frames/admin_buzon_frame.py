@@ -120,9 +120,9 @@ class AdminPropuestasFrame(tk.Frame):
         tk.Label(ventana, text="Detalles de la Propuesta", font=("Trebuchet MS", 16, "bold"), bg="white", foreground='black').pack(pady=10)
         tk.Label(ventana, text=f"Idea: {actividad['idea']}", font=("Trebuchet MS", 12), bg="white", foreground='black').pack(pady=5)
         tk.Label(ventana, text=f"Estado: {estado}", font=("Trebuchet MS", 12, "bold"), bg="white").pack(pady=5)
-        tk.Label(ventana, text=f"Aprobados: {actividad["Propuesta"]['Aprobados']}", font=("Trebuchet MS", 12), bg="white", foreground='black').pack(pady=5)
-        tk.Label(ventana, text=f"Rechazados: {actividad["Propuesta"]['Rechazados']}", font=("Trebuchet MS", 12), bg="white", foreground='black').pack(pady=5)
-        tk.Label(ventana, text=f"Feedback recibidos: {len(actividad["Propuesta"]['Feedback'])}", font=("Trebuchet MS", 12), bg="white", foreground='black').pack(pady=5)
+        tk.Label(ventana, text=f"Aprobados: {actividad['Propuesta']['Aprobados']}", font=("Trebuchet MS", 12), bg="white", foreground='black').pack(pady=5)
+        tk.Label(ventana, text=f"Rechazados: {actividad['Propuesta']['Rechazados']}", font=("Trebuchet MS", 12), bg="white", foreground='black').pack(pady=5)
+        tk.Label(ventana, tk.Label(ventana, text=f"Feedback recibidos: {len(actividad['Propuesta']['Feedback'])}",font=("Trebuchet MS", 12), bg="white", foreground='black').pack(pady=5))
 
         if estado == "Aprobada":
             tk.Label(ventana, text="Sugerencia: Cree la actividad.", font=("Trebuchet MS", 12, "bold"), bg="white").pack(pady=5)

@@ -4,6 +4,8 @@ import re
 import utils
 from user import User
 from moderator import Moderator
+import json
+from final_activity import FinalActivity
 
 class RegisterFrame(tk.Frame):
     # En esta clase
@@ -105,7 +107,6 @@ class RegisterFrame(tk.Frame):
     # Funcion para el boton de Create Account
     def signup(self):
         existing_users = utils.load_existing_users()
-        
         # Recolecta los datos para comparar
         full_name = self.full_name.get().strip()
         user_id = self.userID.get().strip()
@@ -150,7 +151,14 @@ class RegisterFrame(tk.Frame):
             new_user = Moderator(full_name, user_id, password, phone, email)
         else :
             new_user = User(full_name, user_id, password, phone, email)
-
+            with open("activities.json", "r", encoding="utf-8") as archivo:
+                actividades = json.load(archivo)
+        
+            for actividad in actividades:
+                n=new_user._dict_to_activity(actividad,"participante")
+                if isinstance(n,FinalActivity):
+                    continue
+                new_user.add_activity_to_inbox(n)
         existing_users.append(new_user)
         utils.save_users(existing_users)
 

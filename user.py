@@ -49,13 +49,13 @@ class User:
   @staticmethod
   def _activity_to_dict(item):
     if isinstance(item, Proposal):
-      return {item.to_dict()}
+      return item.to_dict()
     elif isinstance(item, Idea):
       return {"tipo": "idea", "data": item.to_dict()}
     elif isinstance(item, ActivityIns):
-      return {item.to_dict()}
+      return item.to_dict()
     elif isinstance(item, FinalActivity):
-      return {item.to_dict()}
+      return item.to_dict()
     else:
       raise ValueError("Unknown item type in inbox")
 
