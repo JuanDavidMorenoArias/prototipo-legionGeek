@@ -21,18 +21,18 @@ class AdminBuzonFrame(tk.Frame):
         titulo_detalle.place(relx=0.25, rely=0.07, anchor='center')  # Espaciado arriba y abajo
 
         # Crear el cuadro de texto más grande
-        self.inbox_listbox = tk.Listbox(self, background='black',foreground='white', font=("Trebuchet MS", 14), width=40, height=15)
+        self.inbox_listbox = tk.Listbox(self, background='white',foreground='black', font=("Trebuchet MS", 14), width=40, height=15, highlightbackground='#9d2fcc', highlightthickness=1)
         self.inbox_listbox.place(relx=0.75, rely=0.5, anchor='center')  # Espacio abajo
 
-        self.detalle = tk.Label(self, font=("Trebuchet MS", 12, "bold"),foreground='white',background='black', width=48, height=17, justify=tk.LEFT)
+        self.detalle = tk.Label(self, font=("Trebuchet MS", 12, "bold"),foreground='black',background='white', width=48, height=17, justify=tk.LEFT, highlightbackground='#9d2fcc', highlightthickness=1)
         self.detalle.place(relx=0.27, rely=0.5, anchor='center')  # Espaciado arriba y abajo
         # Crear botón de eliminar
         boton_eliminar = tk.Button(self, text="Eliminar", background='red', font=("Trebuchet MS", 14), command=self.eliminar_idea)
         boton_eliminar.place(relx=0.75, rely=0.91, anchor='w')  # Espaciado abajo
 
         # Crear botón de detalle
-        boton_eliminar = tk.Button(self, text="Detalle", background='green', font=("Trebuchet MS", 14), command=self.detallar_idea)
-        boton_eliminar.place(relx=0.65, rely=0.91, anchor='w')  # Espaciado abajo
+        boton_detalle = tk.Button(self, text="Detalle", background='green', font=("Trebuchet MS", 14), command=self.detallar_idea)
+        boton_detalle.place(relx=0.65, rely=0.91, anchor='w')  # Espaciado abajo
 
 
         self.load_inbox()
