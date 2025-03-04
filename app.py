@@ -8,6 +8,7 @@ from frames.toggle_menu import ToggleMenuFrame
 from frames.inicio_frame import HomeFrame  # Asegúrate de importar HomeFrame
 from frames.admin_toggle_menu import AdminToggleMenuFrame
 from frames.admin_inicio_frame import AdminHomeFrame  # Asegúrate de importar HomeFrame
+from frames.staff_inicio_frame import StaffHomeFrame # Asegurarse de importar las classes staff
 
 import utils
 
@@ -39,6 +40,8 @@ class App():
             self.login_frame.destroy()
             if user_role == "moderador":
                 self.admin_main_show(user)
+            elif user_role == "staff":
+                self.staff_main_show(user)
             else:
                 self.main_show(user)
 
@@ -52,6 +55,12 @@ class App():
         self.admin_toggle_menu.pack(side=tk.TOP,fill=tk.X)
         self.admin_toggle_menu.pack_propagate(False)
         self.admin_toggle_menu.configure(height=70)
+
+    def staff_main_show(self,user):
+        self.staff_home_frame = StaffHomeFrame(self.root, user)
+        self.staff_home_frame.place(relx=0.5, rely=0.556, anchor='center')
+
+        pass
 
     
     

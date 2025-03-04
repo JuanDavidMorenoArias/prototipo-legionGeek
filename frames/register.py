@@ -4,6 +4,7 @@ import re
 import utils
 from user import User
 from moderator import Moderator
+from staff import Staff
 import json
 from final_activity import FinalActivity
 
@@ -145,20 +146,20 @@ class RegisterFrame(tk.Frame):
         # Si el registro cumplio con todo, guarda al usuario y contraseña
         # Actualiza la lista de usuarios existentes
         # Determinar el rol del usuario
-        role = 'moderador' if password == 'Admin1040' else 'participante'
+        if password == 'Admin1040':
+            role = 'moderador'
+        elif password == 'Staff2025':
+            role = 'staff'
+        else:
+            role = 'participante'
 
         if role == 'moderador':
             new_user = Moderator(full_name, user_id, password, phone, email)
-        else :
+        elif role == 'staff':
+            new_user = Staff(full_name, user_id, password, phone, email)
+        else:
             new_user = User(full_name, user_id, password, phone, email)
-            with open("activities.json", "r", encoding="utf-8") as archivo:
-                actividades = json.load(archivo)
-        
-            for actividad in actividades:
-                n=new_user._dict_to_activity(actividad,"participante")
-                if isinstance(n,FinalActivity):
-                    continue
-                new_user.add_activity_to_inbox(n)
+
         existing_users.append(new_user)
         utils.save_users(existing_users)
 
