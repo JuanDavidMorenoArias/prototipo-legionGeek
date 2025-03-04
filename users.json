@@ -8,11 +8,11 @@
         "role": "participante",
         "inbox": [
             {
-                "idea": "jugar3",
-                "Fecha": "09/03/2025",
-                "Capacidad": "42",
-                "Objetivos": "jugar3",
-                "Duracion": "4",
+                "idea": "jugar4",
+                "Fecha": "08/09/2025",
+                "Capacidad": "23",
+                "Objetivos": "jugar 4",
+                "Duracion": "3",
                 "Material Requerido": "pc",
                 "Propuesta": {
                     "Aprobados": 0,
@@ -21,11 +21,11 @@
                 }
             },
             {
-                "idea": "jugar2",
-                "Fecha": "12/09/2025",
-                "Capacidad": "23",
-                "Objetivos": "jugar2",
-                "Duracion": "3",
+                "idea": "jugar3",
+                "Fecha": "09/03/2025",
+                "Capacidad": "42",
+                "Objetivos": "jugar3",
+                "Duracion": "4",
                 "Material Requerido": "pc",
                 "Propuesta": {
                     "Aprobados": 0,
@@ -40,10 +40,22 @@
                 "Objetivos": "jugar1",
                 "Duracion": "2",
                 "Material Requerido": "pc",
+                "Inscritos": [],
                 "Actividad": {
                     "Inscripciones": 0,
                     "inscritos": [],
                     "momento": "eninscripciones"
+                }
+            },
+            {
+                "idea": "jugar2",
+                "Fecha": "12/09/2025",
+                "Capacidad": "23",
+                "Objetivos": "jugar2",
+                "Duracion": "3",
+                "Material Requerido": "pc",
+                "Finalizada": {
+                    "Feedback": []
                 }
             }
         ]
@@ -76,10 +88,22 @@
                 "Objetivos": "jugar1",
                 "Duracion": "2",
                 "Material Requerido": "pc",
+                "Inscritos": [],
                 "Actividad": {
                     "Inscripciones": 0,
                     "inscritos": [],
                     "momento": "eninscripciones"
+                }
+            },
+            {
+                "idea": "jugar2",
+                "Fecha": "12/09/2025",
+                "Capacidad": "23",
+                "Objetivos": "jugar2",
+                "Duracion": "3",
+                "Material Requerido": "pc",
+                "Finalizada": {
+                    "Feedback": []
                 }
             }
         ]
@@ -92,6 +116,19 @@
         "email": "fdfsdf",
         "role": "participante",
         "inbox": [
+            {
+                "idea": "jugar4",
+                "Fecha": "08/09/2025",
+                "Capacidad": "23",
+                "Objetivos": "jugar 4",
+                "Duracion": "3",
+                "Material Requerido": "pc",
+                "Propuesta": {
+                    "Aprobados": 0,
+                    "Rechazados": 0,
+                    "Feedback": []
+                }
+            },
             {
                 "idea": "jugar3",
                 "Fecha": "09/03/2025",
@@ -106,29 +143,28 @@
                 }
             },
             {
-                "idea": "jugar2",
-                "Fecha": "12/09/2025",
-                "Capacidad": "23",
-                "Objetivos": "jugar2",
-                "Duracion": "3",
-                "Material Requerido": "pc",
-                "Propuesta": {
-                    "Aprobados": 0,
-                    "Rechazados": 0,
-                    "Feedback": []
-                }
-            },
-            {
                 "idea": "jugar1",
                 "Fecha": "23/05/2025",
                 "Capacidad": "10",
                 "Objetivos": "jugar1",
                 "Duracion": "2",
                 "Material Requerido": "pc",
+                "Inscritos": [],
                 "Actividad": {
                     "Inscripciones": 0,
                     "inscritos": [],
                     "momento": "eninscripciones"
+                }
+            },
+            {
+                "idea": "jugar2",
+                "Fecha": "12/09/2025",
+                "Capacidad": "23",
+                "Objetivos": "jugar2",
+                "Duracion": "3",
+                "Material Requerido": "pc",
+                "Finalizada": {
+                    "Feedback": []
                 }
             }
         ]
@@ -141,6 +177,14 @@
         "email": "fsdfsfs",
         "role": "moderador",
         "inbox": [
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "jugar 4",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-03-04 15:09:37"
+                }
+            },
             {
                 "tipo": "idea",
                 "data": {
@@ -202,6 +246,14 @@
             {
                 "tipo": "idea",
                 "data": {
+                    "descripcion": "jugar 4",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-03-04 15:09:37"
+                }
+            },
+            {
+                "tipo": "idea",
+                "data": {
                     "descripcion": "Juegos de mesa",
                     "Enviado por": "fsdfs",
                     "Fecha y hora de envio": "2025-02-05 18:34:35"
@@ -248,5 +300,14 @@
                 }
             }
         ]
+    },
+    {
+        "full_name": "bob",
+        "userID": "41341231",
+        "password": "Staff2025",
+        "phone": "2354353",
+        "email": "sdgfadsfs",
+        "role": "staff",
+        "inbox": []
     }
 ]

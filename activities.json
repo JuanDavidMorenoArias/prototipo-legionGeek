@@ -78,19 +78,6 @@
         }
     },
     {
-        "idea": "jugar2",
-        "Fecha": "12/09/2025",
-        "Capacidad": "23",
-        "Objetivos": "jugar2",
-        "Duracion": "3",
-        "Material Requerido": "pc",
-        "Propuesta": {
-            "Aprobados": 19,
-            "Rechazados": 0,
-            "Feedback": []
-        }
-    },
-    {
         "idea": "jugar3",
         "Fecha": "09/03/2025",
         "Capacidad": "42",
@@ -110,10 +97,34 @@
         "Objetivos": "jugar1",
         "Duracion": "2",
         "Material Requerido": "pc",
-        "Actividad": {
-            "Inscripciones": 0,
-            "inscritos": [],
-            "momento": "eninscripciones"
+        "Propuesta": {
+            "Aprobados": 0,
+            "Rechazados": 0,
+            "Feedback": []
+        }
+    },
+    {
+        "idea": "jugar4",
+        "Fecha": "08/09/2025",
+        "Capacidad": "23",
+        "Objetivos": "jugar 4",
+        "Duracion": "3",
+        "Material Requerido": "pc",
+        "Propuesta": {
+            "Aprobados": 1,
+            "Rechazados": 0,
+            "Feedback": []
+        }
+    },
+    {
+        "idea": "jugar2",
+        "Fecha": "12/09/2025",
+        "Capacidad": "23",
+        "Objetivos": "jugar2",
+        "Duracion": "3",
+        "Material Requerido": "pc",
+        "Finalizada": {
+            "Feedback": []
         }
     }
 ]
