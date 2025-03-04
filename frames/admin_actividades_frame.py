@@ -80,14 +80,6 @@ class AdminActividadesFrame(tk.Frame):
 
             # Cargar usuarios existentes
             users = utils.load_existing_users()
-            
-            # Verificar si algún participante tiene 5 o más propuestas
-            limite_superado = any(len(user.inbox) >= 5 for user in users if user.role == 'participante')
-            
-            if limite_superado:
-                messagebox.showwarning("Límite de propuestas alcanzado", "No se puede enviar más propuestas, los participantes ya cuentan con 2 propuestas.")
-                return  # Salir sin guardar la propuesta
-            
             # Guardar la propuesta y enviarla a los participantes
             utils.save_activity(nueva_propuesta)
             
@@ -124,12 +116,6 @@ class AdminActividadesFrame(tk.Frame):
             # Cargar usuarios existentes
             users = utils.load_existing_users()
             
-            # Verificar si algún participante tiene 5 o más propuestas
-            limite_superado = any(len(user.inbox) >= 5 for user in users if user.role == 'participante')
-            
-            if limite_superado:
-                messagebox.showwarning("Límite de propuestas alcanzado", "No se puede enviar más propuestas, los participantes ya cuentan con 2 propuestas.")
-                return  # Salir sin guardar la propuesta
             
             # Guardar la propuesta y enviarla a los participantes
             utils.save_activity(nueva_propuesta)

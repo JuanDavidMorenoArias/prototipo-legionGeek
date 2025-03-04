@@ -33,22 +33,29 @@ class BuzonFrame(tk.Frame):
         #self.lista_actividades.delete(0, tk.END)
         for idx, actividad in enumerate(self.participant.inbox):
             if isinstance(actividad, Proposal):
+                self.lista_propuestas.delete(0,tk.END)
                 self.lista_propuestas.insert(tk.END, f"{actividad.getIdea()}")
 
             if isinstance(actividad, ActivityIns):
+                self.lista_actividadesI.delete(0,tk.END)
                 self.lista_actividadesI.insert(tk.END, f"{actividad.getIdea()}")
 
             if isinstance(actividad, FinalActivity):
+                self.lista_actividadesfinalizadas.delete(0,tk.END)
                 self.lista_actividadesfinalizadas.insert(tk.END, f"{actividad.getIdea()}")
 
     def ver_detalles(self):
         seleccion = self.lista_propuestas.curselection()
         if seleccion:
             index = seleccion[0]
-            propuesta = self.participant.inbox[index]
+            data=self.lista_propuestas.get(index)
+            for actividad in self.participant.inbox:
+                if actividad.idea==data:
+                    propuesta = actividad
             DetallesActividadVentana(self, propuesta, self.participant, self.cargar_actividades)
         else:
             messagebox.showwarning("Advertencia", "Selecciona una actividad para ver los detalles.")
+            
 
 
 class DetallesActividadVentana(tk.Toplevel):
@@ -59,6 +66,7 @@ class DetallesActividadVentana(tk.Toplevel):
         self.refresh_callback = refresh_callback
         self.title("Detalles de la Actividad")
         self.geometry("400x400")
+        self.parent=parent
 
         detalles = (
             f"Idea: {propuesta.idea}\n"
@@ -88,7 +96,7 @@ class DetallesActividadVentana(tk.Toplevel):
         # Buscar al participante en el JSON
         for user in users:
             if user["userID"] == self.participant.userID: 
-                user["inbox"] = [prop for prop in user["inbox"] if not (prop["data"]["idea"] == self.propuesta.idea)]
+                user["inbox"] = [prop for prop in user["inbox"] if not (prop["idea"] == self.propuesta.idea)]
                 break
 
         # Guardar los cambios en el archivo JSON
@@ -96,55 +104,51 @@ class DetallesActividadVentana(tk.Toplevel):
             json.dump(users, archivo, indent=4, ensure_ascii=False)
 
     def aprobar(self):
-        with open("proposals.json", "r", encoding="utf-8") as archivo:
-            proposals = json.load(archivo)
+        with open("activities.json", "r", encoding="utf-8") as archivo:
+            activities = json.load(archivo)
         
-        for prop in proposals:
+        for prop in activities:
             if prop["idea"] == self.propuesta.idea:
-                prop["Aprobados"] += 1
+                prop['Propuesta']['Aprobados'] += 1
 
-        with open("proposals.json", "w", encoding="utf-8") as archivo:
-            json.dump(proposals, archivo, indent=4, ensure_ascii=False)
-
+        with open("activities.json", "w", encoding="utf-8") as archivo:
+            json.dump(activities, archivo, indent=4, ensure_ascii=False)
         # Eliminar la propuesta del inbox del usuario
-        self.participant.inbox.remove(self.propuesta)
         self.actualizar_inbox_usuario()
-
         messagebox.showinfo("Éxito", "¡Actividad aprobada!")
         self.refresh_callback()
         self.destroy()
 
     def rechazar(self):
-        with open("proposals.json", "r", encoding="utf-8") as archivo:
-            proposals = json.load(archivo)
+        with open("activities.json", "r", encoding="utf-8") as archivo:
+            activities = json.load(archivo)
 
-        for prop in proposals:
+        for prop in activities:
             if prop["idea"] == self.propuesta.idea:
                 prop["Rechazados"] += 1
 
-        with open("proposals.json", "w", encoding="utf-8") as archivo:
-            json.dump(proposals, archivo, indent=4, ensure_ascii=False)
+        with open("activities.json", "w", encoding="utf-8") as archivo:
+            json.dump(activities, archivo, indent=4, ensure_ascii=False)
 
         # Eliminar la propuesta del inbox del usuario
         self.participant.inbox.remove(self.propuesta)
         self.actualizar_inbox_usuario()
 
         messagebox.showinfo("Éxito", "Actividad rechazada.")
-        self.refresh_callback()
         self.destroy()
 
     def solicitar_cambios(self):
         cambios = simpledialog.askstring("Solicitar Cambios", "Especifica los cambios necesarios:")
         if cambios:
-            with open("proposals.json", "r", encoding="utf-8") as archivo:
-                proposals = json.load(archivo)
+            with open("activities.json", "r", encoding="utf-8") as archivo:
+                activities = json.load(archivo)
 
-            for prop in proposals:
+            for prop in activities:
                 if prop["idea"] == self.propuesta.idea:
                     prop["Feedback"].append(cambios)
 
-            with open("proposals.json", "w", encoding="utf-8") as archivo:
-                json.dump(proposals, archivo, indent=4, ensure_ascii=False)
+            with open("activities.json", "w", encoding="utf-8") as archivo:
+                json.dump(activities, archivo, indent=4, ensure_ascii=False)
 
             # Eliminar la propuesta del inbox del usuario
             self.participant.inbox.remove(self.propuesta)
