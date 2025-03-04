@@ -14,8 +14,10 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Inscritos": [],
-        "Actividad": { "Inscripciones": 0 }
+        "Actividad": {
+          "Inscripciones": 0,
+          "inscritos":[]
+        }
       },
       {
         "idea": "torneo pubg",
@@ -24,8 +26,9 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Participates": [],
-        "Finalizada": { "Feedback": [] }
+        "Finalizada": {
+          "Feedback": []
+        }
       },
       {
         "idea": "torneo r6",
@@ -34,7 +37,11 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Propuesta": { "Aprobados": 0, "Rechazados": 0, "Feedback": [] }
+        "Propuesta": {
+          "Aprobados": 1,
+          "Rechazados": 3,
+          "Feedback": ["ds", "dsa"]
+        }
       },
       {
         "idea": "torneo fortnite",
@@ -43,7 +50,11 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Propuesta": { "Aprobados": 0, "Rechazados": 0, "Feedback": [] }
+        "Propuesta": {
+          "Aprobados": 5,
+          "Rechazados": 3,
+          "Feedback": ["ds", "dsa"]
+        }
       },
       {
         "idea": "torneo cod",
@@ -52,7 +63,11 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Propuesta": { "Aprobados": 0, "Rechazados": 0, "Feedback": [] }
+        "Propuesta": {
+          "Aprobados": 1,
+          "Rechazados": 3,
+          "Feedback": ["ds", "dsa", "asdada", "dadad"]
+        }
       }
     ]
   },
@@ -71,8 +86,9 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Inscritos": [],
-        "Actividad": { "Inscripciones": 0 }
+        "Actividad": {
+          "Inscripciones": 0
+        }
       },
       {
         "idea": "torneo pubg",
@@ -81,8 +97,9 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Participates": [],
-        "Finalizada": { "Feedback": [] }
+        "Finalizada": {
+          "Feedback": []
+        }
       },
       {
         "idea": "torneo r6",
@@ -91,7 +108,11 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Propuesta": { "Aprobados": 0, "Rechazados": 0, "Feedback": [] }
+        "Propuesta": {
+          "Aprobados": 1,
+          "Rechazados": 3,
+          "Feedback": ["ds", "dsa"]
+        }
       },
       {
         "idea": "torneo fortnite",
@@ -100,7 +121,11 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Propuesta": { "Aprobados": 0, "Rechazados": 0, "Feedback": [] }
+        "Propuesta": {
+          "Aprobados": 5,
+          "Rechazados": 3,
+          "Feedback": ["ds", "dsa"]
+        }
       },
       {
         "idea": "torneo cod",
@@ -109,7 +134,11 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Propuesta": { "Aprobados": 0, "Rechazados": 0, "Feedback": [] }
+        "Propuesta": {
+          "Aprobados": 1,
+          "Rechazados": 3,
+          "Feedback": ["ds", "dsa", "asdada", "dadad"]
+        }
       }
     ]
   },
@@ -128,8 +157,9 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Inscritos": [],
-        "Actividad": { "Inscripciones": 0 }
+        "Actividad": {
+          "Inscripciones": 0
+        }
       },
       {
         "idea": "torneo pubg",
@@ -138,8 +168,9 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Participates": [],
-        "Finalizada": { "Feedback": [] }
+        "Finalizada": {
+          "Feedback": []
+        }
       },
       {
         "idea": "torneo r6",
@@ -148,7 +179,11 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Propuesta": { "Aprobados": 0, "Rechazados": 0, "Feedback": [] }
+        "Propuesta": {
+          "Aprobados": 1,
+          "Rechazados": 3,
+          "Feedback": ["ds", "dsa"]
+        }
       },
       {
         "idea": "torneo fortnite",
@@ -157,7 +192,11 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Propuesta": { "Aprobados": 0, "Rechazados": 0, "Feedback": [] }
+        "Propuesta": {
+          "Aprobados": 5,
+          "Rechazados": 3,
+          "Feedback": ["ds", "dsa"]
+        }
       },
       {
         "idea": "torneo cod",
@@ -166,7 +205,11 @@
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Propuesta": { "Aprobados": 0, "Rechazados": 0, "Feedback": [] }
+        "Propuesta": {
+          "Aprobados": 1,
+          "Rechazados": 3,
+          "Feedback": ["ds", "dsa", "asdada", "dadad"]
+        }
       }
     ]
   },
@@ -285,14 +328,5 @@
         }
       }
     ]
-  },
-  {
-    "full_name": "fdfsfdsf",
-    "userID": "6",
-    "password": "6",
-    "phone": "fsdfsfsdf",
-    "email": "sdsfsdfsf",
-    "role": "staff",
-    "inbox": []
   }
 ]

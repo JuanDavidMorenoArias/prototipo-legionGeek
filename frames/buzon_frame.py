@@ -26,22 +26,20 @@ class BuzonFrame(tk.Frame):
 
         boton_ver_detalles = tk.Button(self, text="Ver Detalles", command=self.ver_detalles)
         boton_ver_detalles.pack(pady=10)
-
+        boton_ver_inscribir=tk.Button(self, text="inscribir", command=self.ver_detallesIns)
+        boton_ver_inscribir.pack(pady=10)
         self.cargar_actividades()
 
     def cargar_actividades(self):
         #self.lista_actividades.delete(0, tk.END)
         for idx, actividad in enumerate(self.participant.inbox):
             if isinstance(actividad, Proposal):
-                self.lista_propuestas.delete(0,tk.END)
                 self.lista_propuestas.insert(tk.END, f"{actividad.getIdea()}")
 
             if isinstance(actividad, ActivityIns):
-                self.lista_actividadesI.delete(0,tk.END)
                 self.lista_actividadesI.insert(tk.END, f"{actividad.getIdea()}")
 
             if isinstance(actividad, FinalActivity):
-                self.lista_actividadesfinalizadas.delete(0,tk.END)
                 self.lista_actividadesfinalizadas.insert(tk.END, f"{actividad.getIdea()}")
 
     def ver_detalles(self):
@@ -55,7 +53,17 @@ class BuzonFrame(tk.Frame):
             DetallesActividadVentana(self, propuesta, self.participant, self.cargar_actividades)
         else:
             messagebox.showwarning("Advertencia", "Selecciona una actividad para ver los detalles.")
-            
+    def ver_detallesIns(self):
+        seleccion = self.lista_actividadesI.curselection()
+        if seleccion:
+            index = seleccion[0]
+            data=self.lista_actividadesI.get(index)
+            for actividad in self.participant.inbox:
+                if actividad.idea==data:
+                    propuesta = actividad
+            DetallesActividadVentanaIns(self, propuesta, self.participant, self.cargar_actividades)
+        else:
+            messagebox.showwarning("Advertencia", "Selecciona una actividad para ver los detalles.")        
 
 
 class DetallesActividadVentana(tk.Toplevel):
@@ -76,7 +84,6 @@ class DetallesActividadVentana(tk.Toplevel):
             f"Duración: {propuesta.duration} horas\n"
             f"Material Requerido: {propuesta.required_materials}\n"
         )
-
         tk.Label(self, text=detalles, justify="left", font=("Trebuchet MS", 12)).pack(pady=10)
 
         btn_aprobar = tk.Button(self, text="Aprobar", command=self.aprobar)
@@ -125,13 +132,13 @@ class DetallesActividadVentana(tk.Toplevel):
 
         for prop in activities:
             if prop["idea"] == self.propuesta.idea:
-                prop["Rechazados"] += 1
+                prop['Propuesta']["Rechazados"] += 1
 
         with open("activities.json", "w", encoding="utf-8") as archivo:
             json.dump(activities, archivo, indent=4, ensure_ascii=False)
 
         # Eliminar la propuesta del inbox del usuario
-        self.participant.inbox.remove(self.propuesta)
+
         self.actualizar_inbox_usuario()
 
         messagebox.showinfo("Éxito", "Actividad rechazada.")
@@ -156,4 +163,63 @@ class DetallesActividadVentana(tk.Toplevel):
 
         messagebox.showinfo("Éxito", "Cambios solicitados.")
         self.refresh_callback()
+        self.destroy()
+class DetallesActividadVentanaIns(tk.Toplevel):
+    def __init__(self, parent, actividadins, participant, refresh_callback):
+        super().__init__(parent)
+        self.actividadins = actividadins
+        self.participant = participant
+        self.refresh_callback = refresh_callback
+        self.title("Detalles de la Actividad")
+        self.geometry("400x400")
+        self.parent=parent
+
+        detalles = (
+            f"Idea: {actividadins.idea}\n"
+            f"Fecha: {actividadins.date}\n"
+            f"Capacidad: {actividadins.capacity}\n"
+            f"Objetivos: {actividadins.objective}\n"
+            f"Duración: {actividadins.duration} horas\n"
+            f"Material Requerido: {actividadins.required_materials}\n"
+        )
+        tk.Label(self, text=detalles, justify="left", font=("Trebuchet MS", 12)).pack(pady=10)
+        with open("activities.json", "r", encoding="utf-8") as archivo:
+            activities = json.load(archivo)
+            for prop in activities:
+                if prop["idea"] == self.actividadins.idea and not self.participant.userID in  prop['Actividad']["inscritos"]:
+                    detalles = (
+                        f"Idea: {actividadins.idea}\n"
+                        f"Fecha: {actividadins.date}\n"
+                        f"Capacidad: {actividadins.capacity}\n"
+                        f"Objetivos: {actividadins.objective}\n"
+                        f"Duración: {actividadins.duration} horas\n"
+                        f"Material Requerido: {actividadins.required_materials}\n")
+                    btn_aprobar = tk.Button(self, text="inscribirse", command=self.inscribir)
+                    btn_aprobar.pack(pady=5)
+
+                    btn_rechazar = tk.Button(self, text="Rechazar", command=self.declinar)
+                    btn_rechazar.pack(pady=5)
+                if prop["idea"] == self.actividadins.idea and self.participant.userID in  prop['Actividad']["inscritos"]:
+                    detalles = (
+                        f"Idea: {actividadins.idea}\n"
+                        f"Fecha: {actividadins.date}\n"
+                        f"Capacidad: {actividadins.capacity}\n"
+                        f"Objetivos: {actividadins.objective}\n"
+                        f"Duración: {actividadins.duration} horas\n"
+                        f"Material Requerido: {actividadins.required_materials}\n"
+                        )
+                    tk.Label(self, text="YA TE ENCUENTRAS INSCRITO", font=("Arial", 12)).pack(pady=10)
+                    btn_cancelar = tk.Button(self, text="cancelar", command=self.declinar)
+                    btn_cancelar.pack(pady=5)
+    def inscribir(self):
+        with open("activities.json", "r", encoding="utf-8") as archivo:
+            activities = json.load(archivo)
+        for prop in activities:
+            if prop["idea"] == self.actividadins.idea:
+                prop['Actividad']["Inscripciones"] += 1
+                prop['Actividad']["inscritos"].append(self.participant.userID)
+        with open("activities.json", "w", encoding="utf-8") as archivo:
+                json.dump(activities, archivo, indent=4, ensure_ascii=False)
+        self.destroy()
+    def declinar(self):
         self.destroy()

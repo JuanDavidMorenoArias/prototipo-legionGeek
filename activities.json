@@ -1,63 +1,77 @@
 [
-  {
-    "idea": "torneo fifa",
-    "Fecha": "12/07/2025",
-    "Capacidad": "30",
-    "Objetivos": "ganar",
-    "Duracion": "11",
-    "Material Requerido": "pc",
-    "Actividad": {
-      "Inscripciones": 0
+    {
+        "idea": "torneo fifa",
+        "Fecha": "12/07/2025",
+        "Capacidad": "30",
+        "Objetivos": "ganar",
+        "Duracion": "11",
+        "Material Requerido": "pc",
+        "Actividad": {
+            "Inscripciones": 4,
+            "inscritos": [
+                "2"
+            ]
+        }
+    },
+    {
+        "idea": "torneo pubg",
+        "Fecha": "12/07/2025",
+        "Capacidad": "30",
+        "Objetivos": "ganar",
+        "Duracion": "11",
+        "Material Requerido": "pc",
+        "Finalizada": {
+            "Feedback": []
+        }
+    },
+    {
+        "idea": "torneo r6",
+        "Fecha": "12/07/2025",
+        "Capacidad": "30",
+        "Objetivos": "ganar",
+        "Duracion": "11",
+        "Material Requerido": "pc",
+        "Propuesta": {
+            "Aprobados": 1,
+            "Rechazados": 3,
+            "Feedback": [
+                "ds",
+                "dsa"
+            ]
+        }
+    },
+    {
+        "idea": "torneo fortnite",
+        "Fecha": "12/07/2025",
+        "Capacidad": "30",
+        "Objetivos": "ganar",
+        "Duracion": "11",
+        "Material Requerido": "pc",
+        "Propuesta": {
+            "Aprobados": 5,
+            "Rechazados": 3,
+            "Feedback": [
+                "ds",
+                "dsa"
+            ]
+        }
+    },
+    {
+        "idea": "torneo cod",
+        "Fecha": "12/07/2025",
+        "Capacidad": "30",
+        "Objetivos": "ganar",
+        "Duracion": "11",
+        "Material Requerido": "pc",
+        "Propuesta": {
+            "Aprobados": 1,
+            "Rechazados": 3,
+            "Feedback": [
+                "ds",
+                "dsa",
+                "asdada",
+                "dadad"
+            ]
+        }
     }
-  },
-  {
-    "idea": "torneo pubg",
-    "Fecha": "12/07/2025",
-    "Capacidad": "30",
-    "Objetivos": "ganar",
-    "Duracion": "11",
-    "Material Requerido": "pc",
-    "Finalizada": {
-      "Feedback": []
-    }
-  },
-  {
-    "idea": "torneo r6",
-    "Fecha": "12/07/2025",
-    "Capacidad": "30",
-    "Objetivos": "ganar",
-    "Duracion": "11",
-    "Material Requerido": "pc",
-    "Propuesta": {
-      "Aprobados": 1,
-      "Rechazados": 3,
-      "Feedback": ["ds", "dsa"]
-    }
-  },
-  {
-    "idea": "torneo fortnite",
-    "Fecha": "12/07/2025",
-    "Capacidad": "30",
-    "Objetivos": "ganar",
-    "Duracion": "11",
-    "Material Requerido": "pc",
-    "Propuesta": {
-      "Aprobados": 5,
-      "Rechazados": 3,
-      "Feedback": ["ds", "dsa"]
-    }
-  },
-  {
-    "idea": "torneo cod",
-    "Fecha": "12/07/2025",
-    "Capacidad": "30",
-    "Objetivos": "ganar",
-    "Duracion": "11",
-    "Material Requerido": "pc",
-    "Propuesta": {
-      "Aprobados": 1,
-      "Rechazados": 3,
-      "Feedback": ["ds", "dsa", "asdada", "dadad"]
-    }
-  }
 ]
