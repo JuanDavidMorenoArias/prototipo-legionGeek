@@ -1,332 +1,252 @@
 [
-  {
-    "full_name": "fsdfs",
-    "userID": "43749436",
-    "password": "13526481Jj",
-    "phone": "fsdfsdf",
-    "email": "fdfsdf",
-    "role": "participante",
-    "inbox": [
-      {
-        "idea": "torneo fifa",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Actividad": {
-          "Inscripciones": 0,
-          "inscritos":[]
-        }
-      },
-      {
-        "idea": "torneo pubg",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Finalizada": {
-          "Feedback": []
-        }
-      },
-      {
-        "idea": "torneo r6",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Propuesta": {
-          "Aprobados": 1,
-          "Rechazados": 3,
-          "Feedback": ["ds", "dsa"]
-        }
-      },
-      {
-        "idea": "torneo fortnite",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Propuesta": {
-          "Aprobados": 5,
-          "Rechazados": 3,
-          "Feedback": ["ds", "dsa"]
-        }
-      },
-      {
-        "idea": "torneo cod",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Propuesta": {
-          "Aprobados": 1,
-          "Rechazados": 3,
-          "Feedback": ["ds", "dsa", "asdada", "dadad"]
-        }
-      }
-    ]
-  },
-  {
-    "full_name": "fsdfs",
-    "userID": "2",
-    "password": "2",
-    "phone": "fsdfsdf",
-    "email": "fdfsdf",
-    "role": "participante",
-    "inbox": [
-      {
-        "idea": "torneo fifa",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Actividad": {
-          "Inscripciones": 0
-        }
-      },
-      {
-        "idea": "torneo pubg",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Finalizada": {
-          "Feedback": []
-        }
-      },
-      {
-        "idea": "torneo r6",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Propuesta": {
-          "Aprobados": 1,
-          "Rechazados": 3,
-          "Feedback": ["ds", "dsa"]
-        }
-      },
-      {
-        "idea": "torneo fortnite",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Propuesta": {
-          "Aprobados": 5,
-          "Rechazados": 3,
-          "Feedback": ["ds", "dsa"]
-        }
-      },
-      {
-        "idea": "torneo cod",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Propuesta": {
-          "Aprobados": 1,
-          "Rechazados": 3,
-          "Feedback": ["ds", "dsa", "asdada", "dadad"]
-        }
-      }
-    ]
-  },
-  {
-    "full_name": "fsdfs",
-    "userID": "3",
-    "password": "3",
-    "phone": "fsdfsdf",
-    "email": "fdfsdf",
-    "role": "participante",
-    "inbox": [
-      {
-        "idea": "torneo fifa",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Actividad": {
-          "Inscripciones": 0
-        }
-      },
-      {
-        "idea": "torneo pubg",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Finalizada": {
-          "Feedback": []
-        }
-      },
-      {
-        "idea": "torneo r6",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Propuesta": {
-          "Aprobados": 1,
-          "Rechazados": 3,
-          "Feedback": ["ds", "dsa"]
-        }
-      },
-      {
-        "idea": "torneo fortnite",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Propuesta": {
-          "Aprobados": 5,
-          "Rechazados": 3,
-          "Feedback": ["ds", "dsa"]
-        }
-      },
-      {
-        "idea": "torneo cod",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Propuesta": {
-          "Aprobados": 1,
-          "Rechazados": 3,
-          "Feedback": ["ds", "dsa", "asdada", "dadad"]
-        }
-      }
-    ]
-  },
-  {
-    "full_name": "sdffsfsd",
-    "userID": "1040570866",
-    "password": "Admin1040",
-    "phone": "fsdfdsfs",
-    "email": "fsdfsfs",
-    "role": "moderador",
-    "inbox": [
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "Juegos de mesa",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 18:34:35"
-        }
-      },
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "chajajajajaj",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 14:12:38"
-        }
-      },
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "holiiii",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 14:11:42"
-        }
-      },
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "Y estaaaaaaaaaaaaaa",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 14:11:16"
-        }
-      },
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "Y esta tambien",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 14:11:11"
-        }
-      },
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "Quiero proponer lo siguiente",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 14:07:07"
-        }
-      }
-    ]
-  },
-  {
-    "full_name": "sdffsfsd",
-    "userID": "1",
-    "password": "1",
-    "phone": "fsdfdsfs",
-    "email": "fsdfsfs",
-    "role": "moderador",
-    "inbox": [
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "Juegos de mesa",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 18:34:35"
-        }
-      },
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "chajajajajaj",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 14:12:38"
-        }
-      },
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "holiiii",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 14:11:42"
-        }
-      },
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "Y estaaaaaaaaaaaaaa",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 14:11:16"
-        }
-      },
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "Y esta tambien",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 14:11:11"
-        }
-      },
-      {
-        "tipo": "idea",
-        "data": {
-          "descripcion": "Quiero proponer lo siguiente",
-          "Enviado por": "fsdfs",
-          "Fecha y hora de envio": "2025-02-05 14:07:07"
-        }
-      }
-    ]
-  }
+    {
+        "full_name": "fsdfs",
+        "userID": "43749436",
+        "password": "13526481Jj",
+        "phone": "fsdfsdf",
+        "email": "fdfsdf",
+        "role": "participante",
+        "inbox": [
+            {
+                "idea": "jugar3",
+                "Fecha": "09/03/2025",
+                "Capacidad": "42",
+                "Objetivos": "jugar3",
+                "Duracion": "4",
+                "Material Requerido": "pc",
+                "Propuesta": {
+                    "Aprobados": 0,
+                    "Rechazados": 0,
+                    "Feedback": []
+                }
+            },
+            {
+                "idea": "jugar2",
+                "Fecha": "12/09/2025",
+                "Capacidad": "23",
+                "Objetivos": "jugar2",
+                "Duracion": "3",
+                "Material Requerido": "pc",
+                "Propuesta": {
+                    "Aprobados": 0,
+                    "Rechazados": 0,
+                    "Feedback": []
+                }
+            },
+            {
+                "idea": "jugar1",
+                "Fecha": "23/05/2025",
+                "Capacidad": "10",
+                "Objetivos": "jugar1",
+                "Duracion": "2",
+                "Material Requerido": "pc",
+                "Actividad": {
+                    "Inscripciones": 0,
+                    "inscritos": [],
+                    "momento": "eninscripciones"
+                }
+            }
+        ]
+    },
+    {
+        "full_name": "fsdfs",
+        "userID": "2",
+        "password": "2",
+        "phone": "fsdfsdf",
+        "email": "fdfsdf",
+        "role": "participante",
+        "inbox": [
+            {
+                "idea": "jugar3",
+                "Fecha": "09/03/2025",
+                "Capacidad": "42",
+                "Objetivos": "jugar3",
+                "Duracion": "4",
+                "Material Requerido": "pc",
+                "Propuesta": {
+                    "Aprobados": 0,
+                    "Rechazados": 0,
+                    "Feedback": []
+                }
+            },
+            {
+                "idea": "jugar1",
+                "Fecha": "23/05/2025",
+                "Capacidad": "10",
+                "Objetivos": "jugar1",
+                "Duracion": "2",
+                "Material Requerido": "pc",
+                "Actividad": {
+                    "Inscripciones": 0,
+                    "inscritos": [],
+                    "momento": "eninscripciones"
+                }
+            }
+        ]
+    },
+    {
+        "full_name": "fsdfs",
+        "userID": "3",
+        "password": "3",
+        "phone": "fsdfsdf",
+        "email": "fdfsdf",
+        "role": "participante",
+        "inbox": [
+            {
+                "idea": "jugar3",
+                "Fecha": "09/03/2025",
+                "Capacidad": "42",
+                "Objetivos": "jugar3",
+                "Duracion": "4",
+                "Material Requerido": "pc",
+                "Propuesta": {
+                    "Aprobados": 0,
+                    "Rechazados": 0,
+                    "Feedback": []
+                }
+            },
+            {
+                "idea": "jugar2",
+                "Fecha": "12/09/2025",
+                "Capacidad": "23",
+                "Objetivos": "jugar2",
+                "Duracion": "3",
+                "Material Requerido": "pc",
+                "Propuesta": {
+                    "Aprobados": 0,
+                    "Rechazados": 0,
+                    "Feedback": []
+                }
+            },
+            {
+                "idea": "jugar1",
+                "Fecha": "23/05/2025",
+                "Capacidad": "10",
+                "Objetivos": "jugar1",
+                "Duracion": "2",
+                "Material Requerido": "pc",
+                "Actividad": {
+                    "Inscripciones": 0,
+                    "inscritos": [],
+                    "momento": "eninscripciones"
+                }
+            }
+        ]
+    },
+    {
+        "full_name": "sdffsfsd",
+        "userID": "1040570866",
+        "password": "Admin1040",
+        "phone": "fsdfdsfs",
+        "email": "fsdfsfs",
+        "role": "moderador",
+        "inbox": [
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "Juegos de mesa",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 18:34:35"
+                }
+            },
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "chajajajajaj",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 14:12:38"
+                }
+            },
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "holiiii",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 14:11:42"
+                }
+            },
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "Y estaaaaaaaaaaaaaa",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 14:11:16"
+                }
+            },
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "Y esta tambien",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 14:11:11"
+                }
+            },
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "Quiero proponer lo siguiente",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 14:07:07"
+                }
+            }
+        ]
+    },
+    {
+        "full_name": "sdffsfsd",
+        "userID": "1",
+        "password": "1",
+        "phone": "fsdfdsfs",
+        "email": "fsdfsfs",
+        "role": "moderador",
+        "inbox": [
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "Juegos de mesa",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 18:34:35"
+                }
+            },
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "chajajajajaj",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 14:12:38"
+                }
+            },
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "holiiii",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 14:11:42"
+                }
+            },
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "Y estaaaaaaaaaaaaaa",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 14:11:16"
+                }
+            },
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "Y esta tambien",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 14:11:11"
+                }
+            },
+            {
+                "tipo": "idea",
+                "data": {
+                    "descripcion": "Quiero proponer lo siguiente",
+                    "Enviado por": "fsdfs",
+                    "Fecha y hora de envio": "2025-02-05 14:07:07"
+                }
+            }
+        ]
+    }
 ]

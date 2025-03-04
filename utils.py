@@ -55,7 +55,7 @@ def update_activity(activity, tipo, filename='activities.json'):
                 data.remove(activity)
                 if activity.get("Propuesta"):
                     activity.pop("Propuesta")
-                activity[tipo] = {"Inscripciones": 0}
+                activity[tipo] = {"Inscripciones": 0,"inscritos": [],"momento": "eninscripciones"}
                 data.append(activity)
                 file.seek(0)
                 json.dump(data, file, indent=4)
@@ -68,7 +68,26 @@ def update_activity(activity, tipo, filename='activities.json'):
                 file.seek(0)
                 json.dump(data, file, indent=4)
                 file.truncate()
-     
+def update_activity2(activity, tipo, filename='activities.json'):
+     with open(filename, 'r+') as file:
+        data = json.load(file)
+        if activity in data:
+            if tipo == "realizar":
+                data.remove(activity)  
+                activity["Actividad"]= {"Inscripciones": activity["Actividad"]["Inscripciones"],"inscritos": activity["Actividad"]["inscritos"],"momento": "encurso"}
+                data.append(activity)
+                file.seek(0)
+                json.dump(data, file, indent=4)
+                file.truncate()
+            else:
+                data.remove(activity)  
+                activity["Actividad"]= {"Inscripciones": activity["Actividad"]["Inscripciones"],"inscritos": activity["Actividad"]["inscritos"],"momento": "cancelada"}
+                data.append(activity)
+                file.seek(0)
+                json.dump(data, file, indent=4)
+                file.truncate()
+
+
 # Carga los usuarios existentes desde el archivo json con los usuarios
 def load_existing_users(filename='users.json'): # recibe el nombre del archivo
     if os.path.exists(filename):

@@ -1,26 +1,53 @@
 [
     {
-        "idea": "torneo fifa",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
-        "Material Requerido": "pc",
-        "Actividad": {
-            "Inscripciones": 4,
-            "inscritos": [
-                "2"
-            ]
-        }
-    },
-    {
         "idea": "torneo pubg",
         "Fecha": "12/07/2025",
         "Capacidad": "30",
         "Objetivos": "ganar",
         "Duracion": "11",
         "Material Requerido": "pc",
-        "Finalizada": {
+        "Propuesta": {
+            "Aprobados": 0,
+            "Rechazados": 0,
+            "Feedback": []
+        }
+    },
+    {
+        "idea": "torneo cod",
+        "Fecha": "12/07/2025",
+        "Capacidad": "30",
+        "Objetivos": "ganar",
+        "Duracion": "11",
+        "Material Requerido": "pc",
+        "Propuesta": {
+            "Aprobados": 0,
+            "Rechazados": 0,
+            "Feedback": []
+        }
+    },
+    {
+        "idea": "torneo fifa",
+        "Fecha": "12/07/2025",
+        "Capacidad": "30",
+        "Objetivos": "ganar",
+        "Duracion": "11",
+        "Material Requerido": "pc",
+        "Propuesta": {
+            "Aprobados": 0,
+            "Rechazados": 0,
+            "Feedback": []
+        }
+    },
+    {
+        "idea": "torneo fortnite",
+        "Fecha": "12/07/2025",
+        "Capacidad": "30",
+        "Objetivos": "ganar",
+        "Duracion": "11",
+        "Material Requerido": "pc",
+        "Propuesta": {
+            "Aprobados": 0,
+            "Rechazados": 0,
             "Feedback": []
         }
     },
@@ -32,46 +59,61 @@
         "Duracion": "11",
         "Material Requerido": "pc",
         "Propuesta": {
-            "Aprobados": 1,
-            "Rechazados": 3,
-            "Feedback": [
-                "ds",
-                "dsa"
-            ]
+            "Aprobados": 0,
+            "Rechazados": 0,
+            "Feedback": []
         }
     },
     {
-        "idea": "torneo fortnite",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
+        "idea": "jugar lol",
+        "Fecha": "23/08/2025",
+        "Capacidad": "10",
+        "Objetivos": "jugar",
+        "Duracion": "2",
         "Material Requerido": "pc",
         "Propuesta": {
-            "Aprobados": 5,
-            "Rechazados": 3,
-            "Feedback": [
-                "ds",
-                "dsa"
-            ]
+            "Aprobados": 0,
+            "Rechazados": 0,
+            "Feedback": []
         }
     },
     {
-        "idea": "torneo cod",
-        "Fecha": "12/07/2025",
-        "Capacidad": "30",
-        "Objetivos": "ganar",
-        "Duracion": "11",
+        "idea": "jugar2",
+        "Fecha": "12/09/2025",
+        "Capacidad": "23",
+        "Objetivos": "jugar2",
+        "Duracion": "3",
         "Material Requerido": "pc",
         "Propuesta": {
-            "Aprobados": 1,
-            "Rechazados": 3,
-            "Feedback": [
-                "ds",
-                "dsa",
-                "asdada",
-                "dadad"
-            ]
+            "Aprobados": 19,
+            "Rechazados": 0,
+            "Feedback": []
+        }
+    },
+    {
+        "idea": "jugar3",
+        "Fecha": "09/03/2025",
+        "Capacidad": "42",
+        "Objetivos": "jugar3",
+        "Duracion": "4",
+        "Material Requerido": "pc",
+        "Propuesta": {
+            "Aprobados": 0,
+            "Rechazados": 0,
+            "Feedback": []
+        }
+    },
+    {
+        "idea": "jugar1",
+        "Fecha": "23/05/2025",
+        "Capacidad": "10",
+        "Objetivos": "jugar1",
+        "Duracion": "2",
+        "Material Requerido": "pc",
+        "Actividad": {
+            "Inscripciones": 0,
+            "inscritos": [],
+            "momento": "eninscripciones"
         }
     }
 ]

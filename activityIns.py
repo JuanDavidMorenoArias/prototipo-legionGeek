@@ -14,7 +14,9 @@ class ActivityIns(Activity):
             "Material Requerido": self.required_materials,
             "Inscritos": self.inscritos,
             "Actividad": {
-                "Inscripciones": 0
+                "Inscripciones": 0,
+                'inscritos':[],
+                "momento": "eninscripciones"
             }
         }
 
